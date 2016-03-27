@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+  <body>
+
+    <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+    <button id="button">确认填写</button>
+
+    <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+    <script type="text/javascript">
+
+      (function() {
+        /*	
+        在注释下方写下代码
+        给按钮button绑定一个点击事件
+        在事件处理函数中
+        获取aqi-input输入的值，并显示在aqi-display中
+        */
+        
+        //获取页面上的元素
+        var oInput = document.getElementById('aqi-input');
+        var oDisplay = document.getElementById('aqi-display');
+        var oBtn = document.getElementById('button');
+
+        //为按钮注册'click'事件
+        if(oBtn.addEventListener){
+          oBtn.addEventListener('click',displayInput,false);
+        }else{
+          oBtn.attachEvent('onclick',displayInput);
+        }
+        
+        //定义函数用于显示录入的值
+        function displayInput(){  
+          var textValue = oInput.value; //获取aqi-input输入的值
+          if(textValue && textValue.trim() != " "){  //对输入的值做检验
+            oDisplay.innerHTML=textValue.trim(); //显示在aqi-display中
+          }else{
+            oDisplay.innerHTML='尚无录入';
+          }
+        }
+
+        //为String增加一个trim方法
+        String.prototype.trim = function(){
+          var head = 0;
+          var tail = this.length-1;
+          if(this.length==1){
+            return this;
+          }
+          while(this.charAt(head) === " "){
+            head++;
+          }
+          while(this.charAt(tail) === " "){
+            tail--;
+          }
+          if(head==tail){
+            return " ";
+          }else{
+            return this.slice(head,tail+1);
+          }
+        };
+
+      })();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>食材管理</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<div id="wrapper" class="container">
+				<aside class="col-md-3">
+					<h2 class="text-center">食材管理</h2>
+					<img class="text-center" src="images/photo_default.jpg">
+					<ul class="list-group text-center">
+						<li class="list-group-item sectionBtn" id="btn_section01">我的冰箱</li>
+						<li class="list-group-item sectionBtn" id="btn_section02">添加食材</li>
+						<li class="list-group-item sectionBtn" id="btn_section03">能量统计</li>
+					</ul>
+				</aside>
+				<main class="col-md-9">
+					<section id="section01">
+						<h3>我的冰箱</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="search_food_form" method="post" action="/searchFood">
+								<div class="form-group">
+									<div class="col-md-8">
+										<input class="form-control" type="search" name="food_keyword" id="food_keyword" />
+										<input type="hidden" name="ftype" id="ftype" />
+										<input type="hidden" name="enter_time" id="enter_time" />
+										<input type="hidden" name="rest_time" id="rest_time" />
+									</div>	
+									<div class="col-md-4">
+										<input class="btn btn-info" type="button" value="搜索" id="btn_searchFood" />
+									</div>		
+								</div>	
+							</form>
+							<div id="search_condition">
+								<p id="ftype_condition">
+									<span class="span_title">食材类型</span>
+									<span class="label label-default">蔬菜类</span>
+									<span class="label label-default">水果类</span>
+									<span class="label label-default">禽畜类</span>
+									<span class="label label-default">水产类</span>
+									<span class="label label-default">谷物类</span>
+									<span class="label label-default">豆制品</span>
+									<span class="label label-default">奶制品</span>
+									<span class="label label-default">其他</span>
+								</p>
+								<!--<p id="enter_time_condition">
+									<span class="span_title">入库时间</span>
+									<span class="label label-default">不限</span>
+									<span class="label label-default">1天前</span>
+									<span class="label label-default">2天前</span>
+									<span class="label label-default">3天前</span>
+									<span class="label label-default">4天前</span>
+									<span class="label label-default">5天前</span>
+									<span class="label label-default">6天前</span>
+									<span class="label label-default">1周前</span>
+									<span class="label label-default">2周前</span>
+									<span class="label label-default">3周前</span>
+									<span class="label label-default">1个月前</span>
+								</p>
+								<p id="rest_time_condition">
+									<span class="span_title">距离过期</span>
+									<span class="label label-default">不限</span>
+									<span class="label label-default">1天内</span>
+									<span class="label label-default">2天内</span>
+									<span class="label label-default">3天内</span>
+									<span class="label label-default">4天内</span>
+									<span class="label label-default">5天内</span>
+									<span class="label label-default">6天内</span>
+									<span class="label label-default">1周内</span>
+									<span class="label label-default">2周内</span>
+									<span class="label label-default">3周内</span>
+									<span class="label label-default">1个月内</span>
+									<span class="label label-default">超过1个月</span>
+								</p>-->
+							</div>
+							<hr/>
+							<ul class="list-group" id="food_list">
+								<li class="list-group-item">
+									<p>
+										<h4>大白菜</h4>
+										<h5>距离过期：5天</h5>
+										<h5>数量：500千克</h5>
+										<h5>热量：550卡</h5>
+										<h5>入库日期：2016-06-02</h5>
+										<h5>生产日期：2016-05-24</h5>
+										<h5>保质期：15天</h5>
+										<h5>过期日期：2016-06-10</h5>
+										<h5>食材描述：新鲜的大白菜</h5>
+									</p>
+									<p>
+										<a href="">取出冰箱</a>&nbsp;
+										<a href="">推荐食谱</a>
+									</p>
+								</li>
+								<li class="list-group-item">
+									<p>
+										<h4>大白菜</h4>
+										<h5>距离过期：5天</h5>
+										<h5>数量：500千克</h5>
+										<h5>热量：550卡</h5>
+										<h5>入库日期：2016-06-02</h5>
+										<h5>生产日期：2016-05-24</h5>
+										<h5>保质期：15天</h5>
+										<h5>过期日期：2016-06-10</h5>
+										<h5>食材描述：新鲜的大白菜</h5>
+									</p>
+									<p>
+										<a href="">取出冰箱</a>&nbsp;
+										<a href="">推荐食谱</a>
+									</p>
+								</li>
+								<li class="list-group-item">
+									<p>
+										<h4>大白菜</h4>
+										<h5>距离过期：5天</h5>
+										<h5>数量：500千克</h5>
+										<h5>热量：550卡</h5>
+										<h5>入库日期：2016-06-02</h5>
+										<h5>生产日期：2016-05-24</h5>
+										<h5>保质期：15天</h5>
+										<h5>过期日期：2016-06-10</h5>
+										<h5>食材描述：新鲜的大白菜</h5>
+									</p>
+									<p>
+										<a href="">取出冰箱</a>&nbsp;
+										<a href="">推荐食谱</a>
+									</p>
+								</li>
+							</ul>
+						</div>
+					</section><!--end of section 01-->
+					<section id="section02">
+						<h3>添加食材</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="add_food_form" method="post" action="/addFood">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食材类型</label>
+									<div class="col-sm-8">
+										<select name="food_type" class="form-control">
+											<option value="蔬菜类">蔬菜类</option>
+											<option value="水果类">水果类</option>
+											<option value="禽畜类">禽畜类</option>
+											<option value="水产类">水产类</option>
+											<option value="谷物类">谷物类</option>
+											<option value="豆制品">豆制品</option>
+											<option value="奶制品">奶制品</option>
+											<option value="其他">其他</option>
+										</select>		
+									</div>		
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食材名称</label>
+									<div class="col-sm-8" id="food_name">
+										<input class="form-control" type="text" name="food_name" autofocus />
+										<span>请输入食材名称！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">数量</label>
+									<div class="col-sm-8">
+										<div class="col-sm-8" id="quantity">
+											<input class="form-control" type="text" name="quantity" />
+										</div>
+										<div class="col-sm-4">
+											<select name="unit" class="form-control">
+												<option value="克">克</option>
+												<option value="斤">斤</option>
+												<option value="公斤">公斤</option>
+												<option value="毫升">毫升</option>
+												<option value="盒">盒</option>
+												<option value="瓶">瓶</option>
+												<option value="块">块</option>
+												<option value="其他">其他</option>
+											</select>
+										</div>
+										<span>请输入食材数量！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食材描述</label>
+									<div class="col-sm-8">
+										<input class="form-control" type="text" name="food_desc" />
+										<span>请输入食材简短描述！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食材热量</label>
+									<div class="col-sm-8"  id="food_energy">
+										<input class="form-control" type="text" name="food_energy" />
+										<span>请输入食材热量（单位:卡）！</span>&nbsp;
+										<a href="energy_data.html" target="_blank">食材能量参照表</a>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">生产日期</label>
+									<div class="col-sm-8"  id="product_time">
+										<input class="form-control" type="date" name="product_time" />
+										<span>请输入食材生产日期！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">保质期</label>
+									<div class="col-sm-8" id="save_time">
+										<input class="form-control" type="text" name="save_time" />
+										<span>请输入食材保质期(天)！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<input class="btn btn-info col-sm-offset-2" type="submit" value="保存" />
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 tips">
+										
+									</div>
+								</div>			
+							</form>
+						</div>
+					</section><!--end of section 02-->
+					<section id="section03">
+						<h3>本周能量统计</h3>
+						<hr/>
+						<div class="wrapper">
+							<div id="energyDiagram">
+								<div>星期日</div>
+								<div>星期一</div>
+								<div>星期二</div>
+								<div>星期三</div>
+								<div>星期四</div>
+								<div>星期五</div>
+								<div>星期六</div>
+							</div>
+							<div id="recordList">
+								<article>
+									<hr/>
+									<h4>2016-06-12</h4>
+									<h5>大白菜</h5>
+									<h5>估计热量:666卡</h5>
+								</article>
+								<article>
+									<hr/>
+									<h4>2016-06-12</h4>
+									<h5>大白菜</h5>
+									<h5>估计热量:666卡</h5>
+								</article>
+								<article>
+									<hr/>
+									<h4>2016-06-12</h4>
+									<h5>大白菜</h5>
+									<h5>估计热量:666卡</h5>
+								</article>
+								<article>
+									<hr/>
+									<h4>2016-06-12</h4>
+									<h5>大白菜</h5>
+									<h5>估计热量:666卡</h5>
+								</article>
+								<article>
+									<hr/>
+									<h4>2016-06-12</h4>
+									<h5>大白菜</h5>
+									<h5>估计热量:666卡</h5>
+								</article>
+							</div>
+						</div>
+					</section><!--end of section 03-->
+				</main>
+			</div><!--end of wrapper -->
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+
+		//页面初始化加载时隐藏除第一个section之外的其他section.
+		$("#container #wrapper section").first().show().nextAll().hide();
+
+		//点击侧栏导航显示对应的选项卡页面.
+		$(".sectionBtn").click(function(){
+			var IDstr = $(this).attr("id");
+			IDstr = IDstr.substring(IDstr.indexOf("_")+1);
+			$("#"+IDstr,"#container #wrapper").show().siblings().hide();
+		});
+
+		//设置提示样式.
+		$(".wrapper .tips").css({color:"#0f0"});
+
+		//校验食材输入表单.
+		$("#add_food_form").submit(function(){
+			var can_submit=true;
+			var message;
+			var food_name = $.trim($("#food_name input").val());
+			var quantity = $.trim($("#quantity input").val());
+			var food_energy = $.trim($("#food_energy input").val());
+			var product_time = $.trim($("#product_time input").val());
+			var save_time = $.trim($("#save_time input").val());
+
+			if(food_name===""){
+				message="食材名称不能为空！";
+				$("#food_name span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(quantity===""){
+				message="食材数量不能为空！";
+				$("#quantity~span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(food_energy===""){
+				message="食材能量不能为空！";
+				$("#food_energy span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(product_time===""){
+				message="生产日期不能为空！";
+				$("#product_time span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(save_time===""){
+				message="保质期不能为空！";
+				$("#save_time span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+
+			if(can_submit === false){
+				return false;
+			}
+		});
+
+		//页面加载后显示食材列表.
+		/*$.get("/listAllFood",function(data){
+			generateList(data);
+		});
+
+		//搜索食材.
+		$("#btn_searchFood").click(function(){
+			$.post("/searchFood",{
+				food_keyword:$.trim($("#food_keyword").val())
+			},function(data){
+				generateList(data);
+			});
+		});
+
+		//点击标签填写搜索条件.
+		$("#ftype_condition .label-default").click(function(){
+			$("#food_keyword").val($(this).text());
+			$.post("/searchFood",{
+				food_keyword:$.trim($(this).text())
+			},function(data){
+				generateList(data);
+			});
+		});
+
+		function generateList(data){
+			$("#food_list").html("");
+			if(data && data.list){
+				var foods = data.list;
+				var str="";
+				for(var i=0;i<foods.length;i++){
+					var nameColor="#777";
+					var tipColor="green";
+					var tip="距离过期";
+					var deadline=foods[i].deadline;
+					var date=Date.parse(deadline.replace(/-/g,"/"));
+
+					var now=new Date();
+					now.setHours(8,0,0,0);
+					now=now.getTime();
+
+					var offset=parseInt((date-now)/(1000*60*60*24));
+					if(offset>=0 && offset<=3){//3天内过期.
+						nameColor="orange";
+						tipColor="orange";
+					}else if(offset<0){//已过期.
+						nameColor="#f00";
+						tipColor="#f00";
+						tip="已过期";
+					}
+					str+='<li class="list-group-item">'
+						+'	<p>'
+						+'		<h4 style="color:'+nameColor+'">'+foods[i].fname+'</h4>'
+						+'		<h5 style="color:'+tipColor+'">'+tip+'：'+offset+'天</h5>'
+						+'		<h5>数量：'+foods[i].fnum+'</h5>'
+						+'		<h5>热量：'+foods[i].fenergy+'卡</h5>'
+						+'		<h5>入库日期：'+foods[i].enter_time+'</h5>'
+						+'		<h5>生产日期：'+foods[i].product_time+'</h5>'
+						+'		<h5>保质期：'+foods[i].save_time+'天</h5>'
+						+'		<h5>过期日期：'+foods[i].deadline+'</h5>'
+						+'		<h5>食材描述：'+foods[i].fdesc+'</h5>'
+						+'	</p>'
+						+'	<p><a href="/deleteFood/'+foods[i]._id+'">取出冰箱</a>&nbsp;<a href="/searchCookbook/'+foods[i].fname+'">推荐食谱</a></p>'
+						+'</li>';
+				}
+				$("#food_list").html(str);
+			}
+		}
+
+		//页面加载后显示食材消耗记录列表.
+		setTimeout(function(){
+			$.get("/listRecord",function(data){
+				generateRecordList(data);
+			});
+		},6000);
+		
+		function generateRecordList(data){
+			$("#recordList").html("");
+			if(data && data.list){
+				var records=data.list;
+				var str="";
+				for(var i=0;i<records.length;i++){
+					var time=new Date(records[i].time).toLocaleString();
+					str+='<article>'
+						+'	<hr/>'
+						+'	<h4>'+time+'</h4>'
+						+'	<h5>'+records[i].food.fname+'</h5>'
+						+'	<h5>估计热量:'+records[i].food.fenergy+'卡</h5>'
+						+'</article>';
+				}
+				$("#recordList").html(str);
+			}
+		}
+
+		//页面加载后显示食材消耗记录图.
+		setTimeout(function(){
+			$.get("/recordDiagram",function(data){
+				if(data && data.energy){
+					drawRecordDiagram(data.energy);
+				}
+			});
+		},3000);
+		
+		function drawRecordDiagram(energy){
+			var energyArr=energy.split(",");
+			var diagramHeight=400;//图形的高度.
+			var maxValue=4000;//正常一天摄入热量标准值.
+
+			for(var j=0;j<energyArr.length;j++){
+				var ratio=energyArr[j]/maxValue;//比例.
+				var color="#0096E5";
+				var height=parseInt(diagramHeight*ratio);
+				if(ratio>0.9){
+					color="#f00";
+				}else if(ratio>0.7){
+					color="orange";
+				}
+				$('#energyDiagram div:nth-child('+(j+1)+')').css({height:height,background:color});
+			}
+		}*/
+
+
+
+	});
+</script>

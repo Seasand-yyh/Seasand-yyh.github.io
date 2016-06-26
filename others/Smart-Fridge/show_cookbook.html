@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>食谱详情</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<div id="wrapper" class="container">
+				<article class="col-md-offset-2">
+					<img class="img-thumbnail" src="test/scroll01.jpg" alt="">
+					<h3>白切鸡</h3>
+					<h5>所需食材：鸡，姜，葱</h5>
+					<h5>估计热量：约1200卡</h5>
+					<h5>所属菜系：粤菜</h5>
+					<h5>食谱描述：鲜香可口！鲜香可口！鲜香可口！鲜香可口！ </h5>
+					<p>烹调方法：略</p>
+					<hr/>
+					<div>
+						<h4>食谱评分</h4>
+						<div id="cookbook_rate"></div>
+					</div>
+					<input type="hidden" name="cid" id="cid" />
+					<div class="alert alert-info alert-dismissible" role="alert" id="messageBox">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<strong></strong>
+					</div>
+				</article>
+			</div><!--end of wrapper -->
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery.raty.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#messageBox").hide();
+		//食谱评分.
+		$('#cookbook_rate').raty({ 
+			path: 'images/rate_icon' ,
+			//score: <%=cookbook.score %>,
+			click: function(score, evt) {
+			   
+			    /*$.post("/updateScore",{
+			    	id:$("#cid").val(),
+			    	score:score
+			    },function(data){
+			    	if(data && data.mess){
+			    		$("#messageBox").show();
+			    		$("#messageBox strong").text(data.mess);
+
+			    		setTimeout(function(){
+			    			$("#messageBox").hide("slow");
+			    		},5000);
+			    	}
+			    });*/
+			}
+		});
+
+
+
+	});
+</script>

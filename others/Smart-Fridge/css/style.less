@@ -1,0 +1,249 @@
+/**
+ * style.less
+ * @author:Seasand.
+ * @date:2016-05.
+ */
+
+/*=====================================================================================================*/
+
+/*Color*/
+@bgColor:#0096E5;
+@bgFooter:#000;
+@bgPara:#fff;
+@bgBody:#F5F5D5;
+@bgForm:#fff;
+@borderColor:#ccc;
+@fontColor:#777;
+@asideNavHoverColor:#fff;
+@asideNavHoverBg:#0096E5;
+
+/* General Style -- Border*/
+.rounded-corner(@radius:10px){
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+}
+
+/*=====================================================================================================*/
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 100px;
+	background: @bgBody;
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+header{
+	background: @bgColor;
+}
+
+#container{
+	min-height:520px;
+	padding-top: 80px;
+
+	/*index*/
+	#row0{
+		display:flex;
+		align-items:center;
+		img{
+			flex:1;
+		}
+	}
+	#row1{
+		margin: 20px 0;
+		div{
+			padding:30px;
+			text-align:center;
+			color:@fontColor;
+			img{
+				width:200px;
+				height:200px;
+				border:1px solid @bgColor;
+				.rounded-corner(100px);
+			}
+		}
+	}
+	#row2{
+		margin:20px 0;
+		background: @bgPara;
+		div{
+			min-height:420px;
+			padding:30px;
+			text-align:center;
+			color:@fontColor;
+			border-right:1px solid @borderColor;
+			&:last-child{
+				border:none;
+			}
+			p{
+				text-align:left;
+			}
+		}
+	}
+	#row3{
+		margin: 20px 0;
+		background: @bgPara;
+		div{
+			min-height:360px;
+			padding:30px;
+			text-align:center;
+			color:@fontColor;
+			border-right:1px solid @borderColor;
+			&:last-child{
+				border:none;
+			}
+			p{
+				text-align:left;
+			}
+		}
+	}
+	#row4{
+		margin: 20px 0;
+		padding:30px;
+		background: @bgColor;
+		color:#fff;
+		text-align: center;
+		min-height:500px;
+		div{
+			div{
+				margin-top: 20px;
+				img{
+					background: transparent;
+					border: none;
+				}
+			}
+		}
+	}
+	#row5{
+		padding:0;
+		margin-top: 10px;		
+	}
+
+	/*register&login*/
+	.topform{
+		margin-top:30px;
+		border:1px solid @borderColor;
+		color:@fontColor;
+		background: @bgForm;
+		input[type="submit"]{			
+			padding: 10px 50px;
+		}
+	}
+	
+	/*reset_pass*/
+
+	/*cookbook&food&user*/
+	#wrapper{
+		min-height:500px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		border:1px solid @borderColor;
+		background: @bgForm;
+		aside{
+			padding:0;
+			text-align: center;
+			img{
+				border:2px solid @borderColor;
+				.rounded-corner(6px);
+			}
+			ul{
+				margin-top: 30px;
+				li{
+					padding:10px 100px;
+					&:hover{
+						cursor:pointer;
+						color:@asideNavHoverColor;
+						background: @asideNavHoverBg;
+					}
+				}
+			}			
+		}
+		main{
+			padding: 20px;
+			border-left:1px solid @borderColor;
+			section{
+				.wrapper{
+					min-height:400px;
+					/*user part*/				
+					div{
+						#cropbox{
+							width:400px;
+							height:300px;
+							padding:2px;
+							border:1px solid @borderColor;
+							.rounded-corner(6px);
+						}
+						#preview{
+							width:150px;
+							height:150px;
+							padding:2px;
+							border:1px solid @borderColor;
+							.rounded-corner(6px);
+						}
+						#btn_upload,#btn_preview,#btn_savePhoto{
+							margin-top: 20px;
+						}
+						.message{
+							color:green;
+							padding: 10px;
+						}
+						/*food part*/
+						p{
+							span:not(.span_title){
+								cursor:pointer;
+								&:hover{
+									background: @bgColor;
+								}
+							}
+						}
+					}
+					/*food part*/
+					#energyDiagram{
+						border:1px solid @bgColor;
+						height:400px;
+						display: flex;
+						justify-content: space-around;
+						align-items: flex-end;
+						div{
+							border:1px solid #ccc;
+							background:@bgColor;
+							color: #fff;
+							font-size: 10px;
+							text-align:center;
+							min-height: 20px;
+							width:10%;
+						}
+					}
+					/*cookbook part*/
+					#cookbookList{
+						article{
+							min-height:120px;
+						}
+					}
+				}
+			}
+		}
+	}
+	/*show_cookbook*/
+	article{
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+}
+
+footer{
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+	height:100px;
+	padding:20px;
+	color:#fff;
+	background: @bgFooter;
+	text-align: center;
+}

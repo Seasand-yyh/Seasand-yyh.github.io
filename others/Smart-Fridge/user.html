@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>个人中心</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<div id="wrapper" class="container">
+				<aside class="col-md-3">
+					<h2 class="text-center">个人中心</h2>
+					<img class="text-center" src="images/photo_default.jpg">
+					<ul class="list-group text-center">
+						<li class="list-group-item sectionBtn" id="btn_section01">我的头像</li>
+						<li class="list-group-item sectionBtn" id="btn_section02">个人资料</li>
+						<li class="list-group-item sectionBtn" id="btn_section03">修改密码</li>
+						<li class="list-group-item sectionBtn" id="btn_section04">其他设置</li>
+						<li class="list-group-item sectionBtn" id="btn_section05">反馈意见</li>
+					</ul>
+				</aside>
+				<main class="col-md-9">
+					<section id="section01">
+						<h3>我的头像</h3>
+						<hr/>
+						<div class="wrapper">
+							<div class="col-md-8">
+								<img class="img-thumbnail" src="images/photo_sample.png" id="cropbox">
+								<form action="/uploadUserPhoto" method="post" enctype="multipart/form-data" id="uploadForm">  
+							        <input type="file" name="userPhoto" id="file_temporaryImage"/>  
+							        <input type="submit" value="上传本地图片" id="btn_upload" class="btn btn-info"/>
+							        <button type="button" id="btn_preview" class="btn btn-info">预览</button>
+							    </form> 
+							</div>
+							<div class="col-md-4">
+								<img src="images/photo_sample_preview.png" id="preview">
+								<h4>头像预览</h4>
+								<form>
+									<input type="hidden" id="x" name="x" />
+									<input type="hidden" id="y" name="y" />
+									<input type="hidden" id="w" name="w" />
+									<input type="hidden" id="h" name="h" />
+									<input type="hidden" id="imagename" name="imagename" />
+									<input type="hidden" id="userImage" name="userImage" />
+
+									<button type="button" id="btn_savePhoto" class="btn btn-info">保存</button>
+									<span class="message"></span>
+								</form>								
+							</div>
+						</div>
+					</section><!--end of section 01-->
+					<section id="section02">
+						<h3>个人资料</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="profile_form" method="post" action="/editProfile">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">用户账号</label>
+									<div class="col-sm-8">
+										<input class="form-control" type="text" name="account" readonly />
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">用户等级</label>
+									<div class="col-sm-8">
+										<input class="form-control" type="text" name="grade" readonly />
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">用户名称</label>
+									<div class="col-sm-8" id="username">
+										<input class="form-control" type="text" name="username" />
+										<span></span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">性别</label>
+									<div class="radio col-sm-8" id="sex">
+										<label><input type="radio" name="sex" value="男">男</label>&nbsp;
+										<label><input type="radio" name="sex" value="女">女</label>&nbsp;
+										<label><input type="radio" name="sex" value="保密">保密</label>
+									</div>					
+								</div>
+								<div class="form-group">
+									<input class="btn btn-info col-sm-offset-2" type="submit" value="保存" />
+								</div>	
+								<div class="form-group">
+									<div class="col-sm-offset-2 tips">
+										
+									</div>
+								</div>			
+							</form>
+						</div>
+					</section><!--end of section 02-->
+					<section id="section03">
+						<h3>修改密码</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="change_password_form" method="post" action="/changePassword">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">原密码</label>
+									<div class="col-sm-8" id="old_password">
+										<input class="form-control" type="password" name="old_password" autofocus />
+										<span>请输入原来的密码！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">新密码</label>
+									<div class="col-sm-8" id="password">
+										<input class="form-control" type="password" name="password" />
+										<span>请输入新密码,6-18位小写字母或数字！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">重复新密码</label>
+									<div class="col-sm-8" id="repassword">
+										<input class="form-control" type="password" name="repassword" />
+										<span>请再次输入新密码！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<input class="btn btn-info col-sm-offset-2" type="submit" value="修改密码" />
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 tips">
+										
+									</div>
+								</div>			
+							</form>
+						</div>
+					</section><!--end of section 03-->
+					<section id="section04">
+						<h3>其他设置</h3>
+						<hr/>
+						<div class="wrapper">
+							
+						</div>
+					</section><!--end of section 04-->
+					<section id="section05">
+						<h3>反馈意见</h3>
+						<hr/>
+						<div class="wrapper">
+							<form id="suggestion_form" method="post" action="/commitSuggest">
+								<div class="form-group">
+									<label class="control-label">意见建议</label>
+									<textarea name="suggest_content" class="form-control" rows="10"></textarea>
+								</div>
+								<div class="form-group">
+									<input class="btn btn-info col-sm-offset-2" type="submit" value="提交" />
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2"></div>
+								</div>			
+							</form>
+							<section id="suggest_list">
+								<article>
+									<hr/>
+									<h3>123456@sina.com</h3>
+									<h5>2016-06-10</h5>
+									<p>有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！</p>
+								</article>
+								<article>
+									<hr/>
+									<h3>1234567@sina.com</h3>
+									<h5>2016-06-10</h5>
+									<p>有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！</p>
+								</article>
+								<article>
+									<hr/>
+									<h3>12345678@sina.com</h3>
+									<h5>2016-06-10</h5>
+									<p>有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！</p>
+								</article>
+								<article>
+									<hr/>
+									<h3>123456789@sina.com</h3>
+									<h5>2016-06-10</h5>
+									<p>有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！有待提高！</p>
+								</article>
+							</section>
+						</div>
+					</section><!--end of section 05-->
+				</main>
+			</div>
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery.Jcrop.min.js"></script>
+<script src="js/ajaxfileupload.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		//校验修改个人信息表单.
+		$('#profile_form').submit(function(){
+			var username = $.trim($("#username input").val());
+			$("#username span").text("");
+			if(username===""){
+				var message="用户名不能为空！";
+				$("#username span").css({color:"#f00"}).text(message);
+				return false;
+			}
+		});
+
+		//校验修改密码表单.
+		$('#change_password_form').submit(function(){
+			var can_submit = true;
+			var message;
+			var old_password = $.trim($("#old_password input").val());
+			var password = $.trim($("#password input").val());
+			var repassword = $.trim($("#repassword input").val());
+
+			if (old_password.search(/^[a-z0-9_-]{6,18}$/) === -1){
+				message="密码格式不正确！";
+				$("#old_password span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if (password.search(/^[a-z0-9_-]{6,18}$/) === -1){
+				message="密码格式不正确！";
+				$("#password span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if (password!==repassword){
+				message="两次密码输入不一致！";
+				$("#repassword span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+
+			if(can_submit === false){
+				return false;
+			}
+		});
+
+		//校验反馈意见表单.
+		$("#suggestion_form").submit(function(){
+			var input = $.trim($("#suggestion_form textarea").val());
+			if(input === ""){
+				return false;
+			}
+		});
+
+		//点击上传本地图片按钮.
+		/*$("#btn_upload").click(function(){
+			//判断上传控件中是否选择了图片.
+		    var image = $("#file_temporaryImage").val();  
+		    if ($.trim(image) === "") {  
+		        alert("请选择图片！");  
+		        return;  
+		    }
+			//阻止表单提交.
+			$("#uploadForm").submit(function(e){
+				e.preventDefault();
+			});
+			//用ajax提交数据.
+			$.ajaxFileUpload({
+                url: '/uploadUserPhoto', 	//用于文件上传的服务器端请求地址.
+                secureuri: false, 			//是否需要安全协议，一般设置为false.
+                fileElementId: 'file_temporaryImage', 	//文件上传域的ID.
+                dataType: 'json', 			//返回值类型 一般设置为json.
+                "success": function (data, status) { 		//服务器成功响应处理函数.
+                    $("#cropbox").attr("src", data.imgurl+"?time="+new Date().getTime());		//将图片显示在裁剪框中.   
+                    var imagename = data.imgurl.substring(data.imgurl.lastIndexOf("/")+1);
+                    $("#imagename").val(imagename);
+
+                    //激活Jcrop图片裁剪插件.
+                    jQuery(function($) {
+                    	var jcrop_api, boundx, boundy;
+                    	$('#cropbox').Jcrop({
+                    		onSelect: showCoords,
+                    		onChange: showCoords,
+                    		boxWidth:400,
+                    		maxSize:[150,150],
+                    		//aspectRatio: 1
+                    	},function(){
+                    		// Use the API to get the real image size.
+                    		var bounds = this.getBounds();
+                    		boundx = bounds[0];
+                    		boundy = bounds[1];
+                    		// Store the API in the jcrop_api variable.
+                    		jcrop_api = this;
+                    	});
+
+                    	//将边界信息记录到dom元素上（表单隐藏域的值）.
+                    	function showCoords(c){
+                    		$('#x').val(c.x);
+                    		$('#y').val(c.y);
+                    		$('#w').val(c.w);
+                    		$('#h').val(c.h);
+                    	}
+                    });               
+                },
+                "error": function (data, status, e){	//服务器响应失败处理函数.               
+                    alert(e);
+                }
+			});
+		});
+		
+		//点击预览按钮,在预览区显示图像.
+		$("#btn_preview").click(function(){
+			$.post("/cutImage",{
+				imagename:$("#imagename").val(),
+				x:$('#x').val(),
+				y:$('#y').val(),
+				w:$('#w').val(),
+				h:$('#h').val()
+			},function(data){
+				$("#preview").attr("src", data.imgurl);
+				$("#userImage").val(data.imgurl);
+			});
+		});
+
+		//点击保存按钮,上传头像图片裁剪功能.
+		$("#btn_savePhoto").click(function(){
+			$.post("/saveUserImage",{
+				userImage:$("#userImage").val()
+			},function(data){
+				if(data && data.message){
+					$(".wrapper .message").text(data.message);
+				}
+			});
+		});*/
+
+		//页面初始化加载时隐藏除第一个section之外的其他section.
+		$("#container #wrapper section").first().show().nextAll().hide();
+
+		//点击侧栏导航显示对应的选项卡页面.
+		$(".sectionBtn").click(function(){
+			var IDstr = $(this).attr("id");
+			IDstr = IDstr.substring(IDstr.indexOf("_")+1);
+			$("#"+IDstr,"#container #wrapper").show().siblings().hide();
+		});
+
+		//获取建议意见列表.
+		/*$.get("/getSuggest",function(data){
+			$("#suggest_list").html("");
+			if(data && data.list){
+				var suggests = data.list;
+				var str = '';
+				for(var i=0;i<suggests.length;i++){
+					str += '<article><hr/><h3>'+suggests[i].account+'</h3><h5>'+suggests[i].time+'</h5><p>'+suggests[i].content+'</p></article>';
+				}
+				$("#suggest_list").html(str);
+			}
+		});*/
+
+
+
+	});
+</script>

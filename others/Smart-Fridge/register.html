@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>用户注册</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<form class="container form-horizontal topform" id="reg_form" method="post" action="/register">
+				<div class="form-group">
+					<h2 class="col-sm-offset-2">用户注册</h2>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">账&nbsp;&nbsp;号</label>
+					<div class="col-sm-8" id="account">
+						<input class="form-control" type="text" name="account" autofocus />
+						<span>
+							请输入常用电子邮箱作为账号！
+						</span>
+					</div>					
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">密&nbsp;&nbsp;码</label>
+					<div class="col-sm-8" id="password">
+						<input class="form-control" type="password" name="password" />
+						<span>
+							请输入6-18位小写字母或数字作为密码！
+						</span>
+					</div>					
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">重复密码</label>
+					<div class="col-sm-8" id="repassword">
+						<input class="form-control" type="password" name="repassword" />
+						<span>
+							请再次输入密码！
+						</span>
+					</div>					
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">&nbsp;验证码</label>
+					<div class="col-sm-2" id="verifiedcode">
+						<input class="form-control" type="text" name="verifiedcode" />
+						<span>
+							请输入图中的验证码！
+						</span>						
+					</div>
+					<div class="col-sm-5">
+						<img id="img_verified" src="test/verifiedcode.png">
+						<a href="" id="btn_change_verifiedcode">看不清，换一张</a>
+					</div>					
+				</div>
+				<div class="form-group">
+					<input class="btn btn-info col-sm-offset-2" type="submit" value="注册" />
+				</div>			
+			</form>
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		var can_submit = true;
+
+		//校验账号是否已注册.
+		/*$("#account input").blur(function(){
+			var account = $.trim($("#account input").val());
+			//校验账号是否已注册.
+			$.post("/checkRegister",{
+				account:account
+			},function(data){
+				if(data && data.reg===true){
+					var message="账号已注册！";
+					$("#account span").css({color:"#f00"}).text(message);
+					can_submit = false;
+				}
+			});
+		});*/
+		
+		//校验注册表单.
+		$("#reg_form").submit(function(){
+			var message;
+			var account = $.trim($("#account input").val());
+			var password = $.trim($("#password input").val());
+			var repassword = $.trim($("#repassword input").val());
+			var verifiedcode = $.trim($("#verifiedcode input").val());
+
+			if (account.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) === -1){
+				message="账号格式不正确！";
+				$("#account span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if (password.search(/^[a-z0-9_-]{6,18}$/) === -1){
+				message="密码格式不正确！";
+				$("#password span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if (password!==repassword){
+				message="两次密码输入不一致！";
+				$("#repassword span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(verifiedcode===""){
+				message="验证码不能为空！";
+				$("#verifiedcode span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+
+			if(can_submit === false){
+				return false;
+			}
+		});
+
+		//点击链接更换验证码图片.
+		/*$("#btn_change_verifiedcode").click(function(){
+			$("#img_verified").attr("src","/verifiedcode");
+		});*/
+
+
+
+	});
+</script>

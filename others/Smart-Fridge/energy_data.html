@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>食材热量参照表</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<div id="wrapper" class="container">
+				<table class="table table-hover text-center">
+					<caption class="text-center"><h3>常见食材热量参照表</h3></caption>
+					<tr><th colspan="4"><h5>
+						<a href="#wugu">五谷类、豆类</a>、&nbsp;
+						<a href="#shucai">蔬菜类</a>、&nbsp;
+						<a href="#shuiguo">水果类</a>、&nbsp;
+						<a href="#rou">肉类</a>、&nbsp;
+						<a href="#dan">蛋类</a>、&nbsp;
+						<a href="#shuichan">水产类</a>、&nbsp;
+						<a href="#nai">奶类</a>、&nbsp;
+						<a href="#youzhi">油脂类</a>、&nbsp;
+						<a href="#gaodian">糕点小吃类</a>、&nbsp;
+						<a href="#tang">糖类</a>、&nbsp;
+						<a href="#yinliao">饮料类</a>、&nbsp;
+						<a href="#junzao">菌藻类</a>、&nbsp;
+						<a href="#qita">其他类</a>&nbsp;
+					</h5></th></tr>
+
+					<tr><th colspan="4"><h4 id="wugu" class="text-center">五谷类、豆类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>油炸土豆片		</td><td>612/100</td>	<td>白薯干			</td><td>612/100</td></tr>
+					<tr><td>黑芝麻			</td><td>531/100</td>	<td>土豆粉			</td><td>337/100</td></tr>
+					<tr><td>芝麻(白)		</td><td>517/100</td>	<td>粉条			</td><td>337/100</td></tr>
+					<tr><td>油面筋			</td><td>490/100</td>	<td>地瓜粉			</td><td>336/100</td></tr>
+					<tr><td>方便面			</td><td>472/100</td>	<td>玉米(白)		</td><td>336/100</td></tr>
+					<tr><td>油饼			</td><td>399/100</td>	<td>玉米(黄)		</td><td>335/100</td></tr>
+					<tr><td>油条			</td><td>386/100</td>	<td>粉丝			</td><td>335/100</td></tr>
+					<tr><td>莜麦面			</td><td>385/100</td>	<td>黑米			</td><td>333/100</td></tr>
+					<tr><td>燕麦片			</td><td>367/100</td>	<td>煎饼			</td><td>333/100</td></tr>
+					<tr><td>小米			</td><td>358/100</td>	<td>大麦			</td><td>307/100</td></tr>
+					<tr><td>薏米			</td><td>357/100</td>	<td>荞麦粉			</td><td>304/100</td></tr>
+					<tr><td>籼米(标一)		</td><td>351/100</td>	<td>烧饼(糖)		</td><td>302/100</td></tr>
+					<tr><td>高粱米			</td><td>351/100</td>	<td>富强粉切面		</td><td>285/100</td></tr>
+					<tr><td>富强粉			</td><td>350/100</td>	<td>标准粉切面		</td><td>280/100</td></tr>
+					<tr><td>通心粉			</td><td>350/100</td>	<td>烙饼			</td><td>255/100</td></tr>
+					<tr><td>大黄米(黍)		</td><td>349/100</td>	<td>馒头(蒸,标准粉)	</td><td>233/100</td></tr>
+					<tr><td>江米			</td><td>348/100</td>	<td>麸皮			</td><td>220/100</td></tr>
+					<tr><td>粳米(标二)		</td><td>348/100</td>	<td>花卷			</td><td>217/100</td></tr>
+					<tr><td>挂面(富强粉)	</td><td>347/100</td>	<td>馒头(蒸,富强粉)	</td><td>208/100</td></tr>
+					<tr><td>机米			</td><td>347/100</td>	<td>水面筋			</td><td>140/100</td></tr>
+					<tr><td>玉米糁			</td><td>347/100</td>	<td>烤麸			</td><td>121/100</td></tr>
+					<tr><td>米粉(干,细)		</td><td>346/100</td>	<td>米饭(蒸,粳米)	</td><td>117/100</td></tr>
+					<tr><td>香大米			</td><td>346/100</td>	<td>米饭(蒸, 籼米)	</td><td>114/100</td></tr>
+					<tr><td>籼米(标二)		</td><td>345/100</td>	<td>面条(煮,富强粉)	</td><td>109/100</td></tr>
+					<tr><td>挂面(标准粉)	</td><td>344/100</td>	<td>鲜玉米			</td><td>106/ 46</td></tr>
+					<tr><td>标准粉			</td><td>344/100</td>	<td>白薯(白心)		</td><td>104/ 86</td></tr>
+					<tr><td>血糯米			</td><td>343/100</td>	<td>白薯(红心)		</td><td> 99/ 90</td></tr>
+					<tr><td>粳米(标一)		</td><td>343/100</td>	<td>粉皮			</td><td> 64/100</td></tr>
+					<tr><td>黄米			</td><td>342/100</td>	<td>小米粥			</td><td> 46/100</td></tr>
+					<tr><td>玉米面(白)		</td><td>340/100</td>	<td>米粥(粳米)		</td><td> 46/100</td></tr>
+					<tr><td>玉米面(黄)		</td><td>340/100</td>	<td>豆沙			</td><td>243/100</td></tr>
+					<tr><td>素虾(炸)		</td><td>576/100</td>	<td>红豆馅			</td><td>240/100</td></tr>
+					<tr><td>腐竹皮			</td><td>489/100</td>	<td>素火腿			</td><td>211/100</td></tr>
+					<tr><td>腐竹			</td><td>459/100</td>	<td>桂林腐乳		</td><td>204/100</td></tr>
+					<tr><td>豆浆粉			</td><td>422/100</td>	<td>豆腐丝			</td><td>201/100</td></tr>
+					<tr><td>黄豆粉			</td><td>418/100</td>	<td>素鸡			</td><td>192/100</td></tr>
+					<tr><td>豆腐皮			</td><td>409/100</td>	<td>素什锦			</td><td>173/100</td></tr>
+					<tr><td>油炸豆瓣		</td><td>405/100</td>	<td>素大肠			</td><td>153/100</td></tr>
+					<tr><td>油炸豆花		</td><td>400/100</td>	<td>薰干			</td><td>153/100</td></tr>
+					<tr><td>黑豆			</td><td>381/100</td>	<td>酱豆腐			</td><td>151/100</td></tr>
+					<tr><td>黄豆			</td><td>359/100</td>	<td>香干			</td><td>147/100</td></tr>
+					<tr><td>蚕豆(干,去皮)	</td><td>342/ 93</td>	<td>豆腐干			</td><td>140/100</td></tr>
+					<tr><td>卤干			</td><td>336/100</td>	<td>上海南乳		</td><td>138/100</td></tr>
+					<tr><td>虎皮芸豆		</td><td>334/100</td>	<td>菜干			</td><td>136/100</td></tr>
+					<tr><td>绿豆面			</td><td>330/100</td>	<td>腐乳(白)		</td><td>133/100</td></tr>
+					<tr><td>绿豆			</td><td>316/100</td>	<td>臭豆腐			</td><td>130/100</td></tr>
+					<tr><td>杂豆			</td><td>316/100</td>	<td>北豆腐			</td><td> 98/100</td></tr>
+					<tr><td>红芸豆			</td><td>314/100</td>	<td>酸豆乳			</td><td> 67/100</td></tr>
+					<tr><td>豌豆(干)		</td><td>313/100</td>	<td>南豆腐			</td><td> 57/100</td></tr>
+					<tr><td>红小豆			</td><td>309/100</td>	<td>豆奶			</td><td> 30/100</td></tr>
+					<tr><td>杂芸豆(带皮)	</td><td>306/100</td>	<td>豆浆			</td><td> 13/100</td></tr>
+					<tr><td>蚕豆(干,带皮)	</td><td>304/100</td>	<td>豆腐脑			</td><td> 10/100</td></tr>
+					<tr><td>白芸豆			</td><td>296/100</td>	<td></td>			<td></td></tr>
+					<tr><td>油豆腐			</td><td>244/100</td>	<td></td>			<td></td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="shucai" class="text-center">蔬菜类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>干姜			</td><td>273/95</td><td>茄子(绿皮)		</td><td>25/90</td></tr>
+					<tr><td>蕨菜(脱水)		</td><td>251/100</td><td>苋菜(青)		</td><td>25/74</td></tr>
+					<tr><td>竹笋(黑笋,干)	</td><td>213/76</td><td>雪里红			</td><td>24/94</td></tr>
+					<tr><td>辣椒(红尖,干)	</td><td>212/88</td><td>小葱			</td><td>24/73</td></tr>
+					<tr><td>黄花菜			</td><td>199/98</td><td>菠菜			</td><td>24/89</td></tr>
+					<tr><td>竹笋(白笋,干)	</td><td>196/64</td><td>菜花			</td><td>24/82</td></tr>
+					<tr><td>紫皮大蒜		</td><td>136/89</td><td>茴香			</td><td>24/86</td></tr>
+					<tr><td>大蒜			</td><td>126/85</td><td>小叶芥菜		</td><td>24/88</td></tr>
+					<tr><td>毛豆			</td><td>123/53</td><td>茭白			</td><td>23/74</td></tr>
+					<tr><td>豌豆			</td><td>105/42</td><td>油菜			</td><td>23/87</td></tr>
+					<tr><td>蚕豆			</td><td>104/31</td><td>辣椒(青,尖)		</td><td>23/84</td></tr>
+					<tr><td>慈姑			</td><td>94/89</td><td>南瓜				</td><td>22/85</td></tr>
+					<tr><td>番茄酱(罐头)	</td><td>81/100</td><td>柿子椒			</td><td>22/82</td></tr>
+					<tr><td>芋头			</td><td>79/84</td><td>圆白菜			</td><td>22/86</td></tr>
+					<tr><td>土豆			</td><td>76/94</td><td>韭黄				</td><td>22/88</td></tr>
+					<tr><td>甜菜			</td><td>75/90</td><td>油豆角			</td><td>22/99</td></tr>
+					<tr><td>藕				</td><td>70/88</td><td>毛竹笋			</td><td>21/67</td></tr>
+					<tr><td>苜蓿			</td><td>60/100</td><td>心里美萝卜		</td><td>21/88</td></tr>
+					<tr><td>荸荠			</td><td>59/78</td><td>蒜黄				</td><td>21/97</td></tr>
+					<tr><td>山药			</td><td>56/83</td><td>茼蒿				</td><td>21/82</td></tr>
+					<tr><td>香椿			</td><td>47/76</td><td>番茄罐头(整)		</td><td>21/100</td></tr>
+					<tr><td>枸杞菜			</td><td>44/49</td><td>茄子				</td><td>21/93</td></tr>
+					<tr><td>黄豆芽			</td><td>44/100</td><td>丝瓜			</td><td>20/83</td></tr>
+					<tr><td>胡萝卜(黄)		</td><td>43/97</td><td>空心菜			</td><td>20/76</td></tr>
+					<tr><td>玉兰片			</td><td>43/100</td><td>萝卜樱(小,红)	</td><td>20/93</td></tr>
+					<tr><td>鲜姜			</td><td>41/95</td><td>木耳菜			</td><td>20/76</td></tr>
+					<tr><td>洋葱			</td><td>39/90</td><td>白萝卜			</td><td>20/95</td></tr>
+					<tr><td>胡萝卜(红)		</td><td>37/96</td><td>油菜苔			</td><td>20/93</td></tr>
+					<tr><td>扁豆			</td><td>37/91</td><td>竹笋(春笋)		</td><td>20/66</td></tr>
+					<tr><td>蒜苗			</td><td>37/82</td><td>芹菜				</td><td>20/67</td></tr>
+					<tr><td>羊角豆			</td><td>37/88</td><td>芥蓝				</td><td>19/78</td></tr>
+					<tr><td>榆钱			</td><td>36/100</td><td>小水萝卜		</td><td>19/66</td></tr>
+					<tr><td>苦菜			</td><td>35/100</td><td>竹笋			</td><td>19/63</td></tr>
+					<tr><td>刀豆			</td><td>35/92</td><td>西红柿			</td><td>19/97</td></tr>
+					<tr><td>芥菜头			</td><td>33/83</td><td>长茄子			</td><td>19/96</td></tr>
+					<tr><td>西兰花(绿菜花)	</td><td>33/83</td><td>苦瓜				</td><td>19/81</td></tr>
+					<tr><td>辣椒(红小)		</td><td>32/80</td><td>菜瓜				</td><td>18/88</td></tr>
+					<tr><td>香菜			</td><td>31/81</td><td>西葫芦			</td><td>18/73</td></tr>
+					<tr><td>苋菜(紫)		</td><td>31/73</td><td>芦笋				</td><td>18/90</td></tr>
+					<tr><td>芹菜叶			</td><td>31/100</td><td>莴笋叶			</td><td>18/89</td></tr>
+					<tr><td>青萝卜			</td><td>31/95</td><td>绿豆芽			</td><td>18/100</td></tr>
+					<tr><td>苤蓝			</td><td>30/78</td><td>西洋菜(豆瓣菜)	</td><td>17/73</td></tr>
+					<tr><td>大葱(鲜)		</td><td>30/82</td><td>黄瓜				</td><td>15/92</td></tr>
+					<tr><td>冬寒菜			</td><td>30/58</td><td>小白菜			</td><td>15/81</td></tr>
+					<tr><td>豆角			</td><td>30/96</td><td>牛俐生菜			</td><td>15/81</td></tr>
+					<tr><td>白豆角			</td><td>30/97</td><td>大白菜(青白口)	</td><td>15/83</td></tr>
+					<tr><td>青蒜			</td><td>30/84</td><td>大白菜(酸菜)		</td><td>14/100</td></tr>
+					<tr><td>豇豆			</td><td>29/97</td><td>大白菜(小白口)	</td><td>14/85</td></tr>
+					<tr><td>豇豆(长)		</td><td>29/98</td><td>大叶芥菜(盖菜)	</td><td>14/71</td></tr>
+					<tr><td>豌豆苗			</td><td>29/98</td><td>旱芹				</td><td>14/66</td></tr>
+					<tr><td>红菜苔			</td><td>29/52</td><td>萝卜樱(白)		</td><td>14/100</td></tr>
+					<tr><td>四季豆			</td><td>28/96</td><td>莴笋				</td><td>14/62</td></tr>
+					<tr><td>荷兰豆			</td><td>27/88</td><td>葫芦				</td><td>14/87</td></tr>
+					<tr><td>蓟菜			</td><td>27/88</td><td>水芹				</td><td>13/60</td></tr>
+					<tr><td>木瓜			</td><td>27/86</td><td>生菜				</td><td>13/94</td></tr>
+					<tr><td>韭菜			</td><td>26/90</td><td>减肥笋瓜			</td><td>12/91</td></tr>
+					<tr><td>变萝卜			</td><td>26/94</td><td>冬瓜				</td><td>11/80</td></tr>
+					<tr><td>白菜苔			</td><td>25/84</td><td>竹笋(鞭笋)		</td><td>11/45</td></tr>
+					<tr><td>茭笋			</td><td>25/77</td><td>面西胡瓜			</td><td>10/88</td></tr>
+					<tr><td>芸豆			</td><td>25/96</td><td></td>			<td></td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="shuiguo" class="text-center">水果类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>松子仁			</td><td>698/100</td><td>猕猴桃			</td><td>56/83</td></tr>
+					<tr><td>松子(生)		</td><td>640/32	</td><td>黄元帅苹果		</td><td>55/80</td></tr>
+					<tr><td>核桃(干)		</td><td>627/43	</td><td>金橘			</td><td>55/100</td></tr>
+					<tr><td>松子(炒)		</td><td>619/31	</td><td>京白梨			</td><td>54/79</td></tr>
+					<tr><td>葵花子(炒)		</td><td>616/52	</td><td>国光苹果		</td><td>54/78</td></tr>
+					<tr><td>葵花子仁		</td><td>606/100</td><td>桃(黄桃)		</td><td>54/93</td></tr>
+					<tr><td>山核桃(干)		</td><td>601/24	</td><td>海棠罐头		</td><td>53/100</td></tr>
+					<tr><td>葵花子(生)		</td><td>597/50	</td><td>倭锦苹果		</td><td>50/86</td></tr>
+					<tr><td>榛子(炒)		</td><td>594/21	</td><td>鸭广梨			</td><td>50/76</td></tr>
+					<tr><td>花生(炒)		</td><td>589/71	</td><td>葡萄(巨峰)		</td><td>50/84</td></tr>
+					<tr><td>花生仁(炒)		</td><td>581/100</td><td>葡萄(玫瑰香)	</td><td>50/86</td></tr>
+					<tr><td>南瓜子(炒)		</td><td>574/68	</td><td>桑葚			</td><td>49/100</td></tr>
+					<tr><td>西瓜子(炒)		</td><td>573/43	</td><td>青香蕉苹果		</td><td>49/80</td></tr>
+					<tr><td>南瓜子仁		</td><td>566/100</td><td>红香蕉苹果		</td><td>49/87</td></tr>
+					<tr><td>花生仁(生)		</td><td>563/100</td><td>黄香蕉苹果		</td><td>49/88</td></tr>
+					<tr><td>西瓜子仁		</td><td>555/100</td><td>橄榄			</td><td>49/80</td></tr>
+					<tr><td>榛子(干)		</td><td>542/27	</td><td>莱阳梨			</td><td>49/80</td></tr>
+					<tr><td>杏仁			</td><td>514/100</td><td>苹果梨			</td><td>48/94</td></tr>
+					<tr><td>白果			</td><td>355/100</td><td>紫酥梨			</td><td>47/59</td></tr>
+					<tr><td>栗子(干)		</td><td>345/73	</td><td>冬果梨罐头		</td><td>47/100</td></tr>
+					<tr><td>莲子(干)		</td><td>344/100</td><td>橙子			</td><td>47/74</td></tr>
+					<tr><td>葡萄干			</td><td>341/100</td><td>巴梨			</td><td>46/79</td></tr>
+					<tr><td>苹果脯			</td><td>336/100</td><td>祝光苹果		</td><td>46/86</td></tr>
+					<tr><td>杏脯			</td><td>329/100</td><td>桃(旱久保)		</td><td>46/89</td></tr>
+					<tr><td>核桃(鲜)		</td><td>327/43	</td><td>樱桃			</td><td>46/80</td></tr>
+					<tr><td>金丝小枣		</td><td>322/81	</td><td>红富士苹果		</td><td>45/85</td></tr>
+					<tr><td>果丹皮			</td><td>321/100</td><td>伏苹果			</td><td>45/86</td></tr>
+					<tr><td>无核蜜枣		</td><td>320/100</td><td>福橘			</td><td>45/67</td></tr>
+					<tr><td>桂圆肉			</td><td>313/100</td><td>印度苹果		</td><td>44/90</td></tr>
+					<tr><td>桃脯			</td><td>310/100</td><td>红玉苹果		</td><td>43/84</td></tr>
+					<tr><td>西瓜脯			</td><td>305/100</td><td>酥梨			</td><td>43/72</td></tr>
+					<tr><td>大枣(干)		</td><td>298/88	</td><td>鸭梨			</td><td>43/82</td></tr>
+					<tr><td>花生(生)		</td><td>298/53	</td><td>芦柑			</td><td>43/77</td></tr>
+					<tr><td>杏酱			</td><td>286/100</td><td>葡萄(紫)		</td><td>43/88</td></tr>
+					<tr><td>海棠脯			</td><td>286/100</td><td>桃 (五月鲜)	</td><td>42/93</td></tr>
+					<tr><td>苹果酱			</td><td>277/100</td><td>蜜橘			</td><td>42/76</td></tr>
+					<tr><td>桂圆干			</td><td>273/37	</td><td>菠萝			</td><td>41/68</td></tr>
+					<tr><td>桃酱			</td><td>273/100</td><td>雪花梨			</td><td>41/86</td></tr>
+					<tr><td>草莓酱			</td><td>269/100</td><td>番石榴			</td><td>41/97</td></tr>
+					<tr><td>干枣			</td><td>264/80	</td><td>桃(久保)		</td><td>41/94</td></tr>
+					<tr><td>柿饼			</td><td>250/97	</td><td>蜜桃			</td><td>41/88</td></tr>
+					<tr><td>椰子			</td><td>231/33	</td><td>柚子(文旦)		</td><td>41/69</td></tr>
+					<tr><td>乌枣			</td><td>228/59	</td><td>四川红橘		</td><td>40/78</td></tr>
+					<tr><td>黑枣			</td><td>228/98	</td><td>苹果罐头		</td><td>39/100</td></tr>
+					<tr><td>密云小枣		</td><td>214/92	</td><td>枇杷			</td><td>39/62</td></tr>
+					<tr><td>莲子(糖水)		</td><td>201/100</td><td>小叶橘			</td><td>38/81</td></tr>
+					<tr><td>沙枣			</td><td>200/41	</td><td>冬果梨			</td><td>37/87</td></tr>
+					<tr><td>栗子(鲜)		</td><td>185/80	</td><td>杏子罐头		</td><td>37/100</td></tr>
+					<tr><td>红果(干)		</td><td>152/100</td><td>杏				</td><td>36/91</td></tr>
+					<tr><td>酒枣			</td><td>145/91	</td><td>李子			</td><td>36/91</td></tr>
+					<tr><td>鲜枣			</td><td>122/87	</td><td>柠檬			</td><td>35/66</td></tr>
+					<tr><td>芭蕉			</td><td>109/68	</td><td>李子杏			</td><td>35/92</td></tr>
+					<tr><td>红果			</td><td>95/76	</td><td>哈密瓜			</td><td>34/71</td></tr>
+					<tr><td>香蕉			</td><td>91/59	</td><td>西瓜(京欣一号)</td><td>34/59</td></tr>
+					<tr><td>人参果			</td><td>80/88	</td><td>糖水梨罐头		</td><td>33/100</td></tr>
+					<tr><td>海棠			</td><td>73/86	</td><td>芒果			</td><td>32/60</td></tr>
+					<tr><td>柿子			</td><td>71/87	</td><td>草莓			</td><td>30/97</td></tr>
+					<tr><td>桂圆(鲜)		</td><td>70/50	</td><td>红肖梨			</td><td>30/87</td></tr>
+					<tr><td>荔枝(鲜)离枝	</td><td>70/73	</td><td>杨桃			</td><td>29/88</td></tr>
+					<tr><td>甘蔗汁			</td><td>64/100	</td><td>杨梅			</td><td>28/82</td></tr>
+					<tr><td>玛瑙石榴		</td><td>63/57	</td><td>库尔勒梨		</td><td>28/91</td></tr>
+					<tr><td>青皮石榴		</td><td>61/55	</td><td>柠檬汁			</td><td>26/100</td></tr>
+					<tr><td>无花果			</td><td>59/100	</td><td>香瓜			</td><td>26/78</td></tr>
+					<tr><td>红元帅苹果		</td><td>59/84	</td><td>西瓜(郑州三号)</td><td>25/59</td></tr>
+					<tr><td>桃罐头			</td><td>58/100	</td><td>白兰瓜			</td><td>21/55</td></tr>
+					<tr><td>红星苹果		</td><td>57/85	</td><td></td>			<td></td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="rou" class="text-center">肉类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>猪肉(肥)		</td><td>816/100</td><td>牛舌		</td><td>196/100</td></tr>
+					<tr><td>羊肉干(绵羊)	</td><td>588/100</td><td>鸡翅		</td><td>194/69</td></tr>
+					<tr><td>腊肠			</td><td>584/100</td><td>猪大肠		</td><td>191/100</td></tr>
+					<tr><td>猪肉(血脖)		</td><td>576/90	</td><td>猪耳		</td><td>190/100</td></tr>
+					<tr><td>猪肉(肋条肉)	</td><td>568/96	</td><td>猪肉(腿)	</td><td>190/100</td></tr>
+					<tr><td>牛肉干			</td><td>550/100</td><td>瓦罐鸡汤(肉)</td><td>190/100</td></tr>
+					<tr><td>酱汁肉			</td><td>549/96	</td><td>卤猪杂		</td><td>186/100</td></tr>
+					<tr><td>鸭皮			</td><td>538/100</td><td>腊肉		</td><td>181/100</td></tr>
+					<tr><td>香肠			</td><td>508/100</td><td>鸡腿		</td><td>181/69</td></tr>
+					<tr><td>母麻鸭			</td><td>461/75	</td><td>羊蹄筋(生)	</td><td>177/100</td></tr>
+					<tr><td>牛肉松			</td><td>445/100</td><td>鸡心		</td><td>172/100</td></tr>
+					<tr><td>鸡肉松			</td><td>440/100</td><td>煨牛肉(罐头)</td><td>166/100</td></tr>
+					<tr><td>北京烤鸭		</td><td>436/80	</td><td>酱驴肉		</td><td>160/100</td></tr>
+					<tr><td>广东香肠		</td><td>433/100</td><td>猪蹄筋		</td><td>156/100</td></tr>
+					<tr><td>北京填鸭		</td><td>424/75	</td><td>猪肉(里脊)	</td><td>155/100</td></tr>
+					<tr><td>瓦罐鸡汤(汤)	</td><td>408/100</td><td>牛蹄筋		</td><td>151/100</td></tr>
+					<tr><td>猪肉松			</td><td>396/100</td><td>鸭掌		</td><td>150/59</td></tr>
+					<tr><td>猪肉(肥,瘦)		</td><td>395/100</td><td>牛蹄筋(熟)	</td><td>147/100</td></tr>
+					<tr><td>肉鸡			</td><td>389/74	</td><td>沙鸡		</td><td>147/41</td></tr>
+					<tr><td>咸肉			</td><td>385/100</td><td>鸭翅		</td><td>146/67</td></tr>
+					<tr><td>公麻鸭			</td><td>360/63	</td><td>鸭心		</td><td>143/100</td></tr>
+					<tr><td>猪肉(软五花)	</td><td>349/85	</td><td>火鸡肝		</td><td>143/100</td></tr>
+					<tr><td>猪肉(硬五花)	</td><td>339/79	</td><td>猪肉(瘦)	</td><td>143/100</td></tr>
+					<tr><td>猪肉(前蹄膀)	</td><td>338/67	</td><td>羊脑		</td><td>142/100</td></tr>
+					<tr><td>宫爆肉丁(罐头)	</td><td>336/100</td><td>牛肝		</td><td>139/100</td></tr>
+					<tr><td>猪肉(后臀尖)	</td><td>331/97	</td><td>乌鸦肉		</td><td>136/100</td></tr>
+					<tr><td>茶肠			</td><td>329/100</td><td>羊肝		</td><td>134/100</td></tr>
+					<tr><td>猪肉(后蹄膀)	</td><td>320/73	</td><td>鸡胸脯肉	</td><td>133/100</td></tr>
+					<tr><td>金华火腿		</td><td>318/100</td><td>猪脑		</td><td>131/100</td></tr>
+					<tr><td>猪肘棒(熟)		</td><td>314/72	</td><td>猪肝		</td><td>129/99</td></tr>
+					<tr><td>盐水鸭(熟)		</td><td>312/81	</td><td>鹅肝		</td><td>129/100</td></tr>
+					<tr><td>蒜肠			</td><td>297/100</td><td>喜鹊肉		</td><td>128/100</td></tr>
+					<tr><td>小泥肠			</td><td>295/100</td><td>鸭肝		</td><td>128/100</td></tr>
+					<tr><td>羊肉(冻,山羊)	</td><td>293/100</td><td>土鸡		</td><td>124/58</td></tr>
+					<tr><td>猪肉香肠罐头	</td><td>290/100</td><td>马肉		</td><td>122/100</td></tr>
+					<tr><td>烧鹅			</td><td>289/73	</td><td>鸡肝(肉鸡)	</td><td>121/100</td></tr>
+					<tr><td>羊肉(冻,绵羊)	</td><td>285/100</td><td>鸡肝		</td><td>121/100</td></tr>
+					<tr><td>风干肠			</td><td>283/100</td><td>猪心		</td><td>119/97</td></tr>
+					<tr><td>小红肠			</td><td>280/100</td><td>羊肉(瘦)	</td><td>118/90</td></tr>
+					<tr><td>叉烧肉			</td><td>279/100</td><td>鸡胗		</td><td>118/100</td></tr>
+					<tr><td>肯德基炸鸡		</td><td>279/70	</td><td>方腿		</td><td>117/100</td></tr>
+					<tr><td>蛋清肠			</td><td>278/100</td><td>狗肉		</td><td>116/80</td></tr>
+					<tr><td>猪排骨			</td><td>278/72	</td><td>驴肉(瘦)	</td><td>116/100</td></tr>
+					<tr><td>大肉肠			</td><td>272/100</td><td>羊心		</td><td>113/100</td></tr>
+					<tr><td>酱羊肉			</td><td>272/100</td><td>羊肉(前腿)	</td><td>111/71</td></tr>
+					<tr><td>大腊肠			</td><td>267/100</td><td>乌骨鸡		</td><td>111/48</td></tr>
+					<tr><td>酱鸭			</td><td>266/80	</td><td>鹌鹑		</td><td>110/58</td></tr>
+					<tr><td>猪蹄			</td><td>266/60	</td><td>猪肚		</td><td>110/96</td></tr>
+					<tr><td>猪大排			</td><td>264/68	</td><td>羊肉(胸脯)	</td><td>109/81</td></tr>
+					<tr><td>午餐肠			</td><td>261/100</td><td>羊肉(颈)	</td><td>109/74</td></tr>
+					<tr><td>红果肠			</td><td>260/100</td><td>牛肉(瘦)	</td><td>106/100</td></tr>
+					<tr><td>猪蹄(熟)		</td><td>260/43	</td><td>火鸡胸脯肉	</td><td>103/100</td></tr>
+					<tr><td>母鸡(一年内鸡)	</td><td>256/66	</td><td>羊肉(后腿)	</td><td>102/77</td></tr>
+					<tr><td>鸡爪			</td><td>254/60	</td><td>兔肉		</td><td>102/100</td></tr>
+					<tr><td>驴肉(熟)		</td><td>251/100</td><td>牛肉(前腱)	</td><td>100/95</td></tr>
+					<tr><td>酱鸭(罐头)		</td><td>248/93	</td><td>鹅肫		</td><td>100/100</td></tr>
+					<tr><td>猪肘棒			</td><td>248/67	</td><td>牛肉(后腿)	</td><td>98/100</td></tr>
+					<tr><td>腊羊肉			</td><td>246/100</td><td>猪腰子		</td><td>96/93</td></tr>
+					<tr><td>酱牛肉			</td><td>246/100</td><td>牛肉(前腿)	</td><td>95/100</td></tr>
+					<tr><td>鹅				</td><td>245/63	</td><td>牛肺		</td><td>94/100</td></tr>
+					<tr><td>鸭舌			</td><td>245/61	</td><td>羊肉(脊背)	</td><td>94/100</td></tr>
+					<tr><td>烤鸡			</td><td>240/73	</td><td>牛肉(后腱)	</td><td>93/94</td></tr>
+					<tr><td>鸭				</td><td>240/68	</td><td>鸭肫		</td><td>92/93</td></tr>
+					<tr><td>羊肉串(电烤)	</td><td>234/100</td><td>火鸡肫		</td><td>91/100</td></tr>
+					<tr><td>猪口条			</td><td>233/94	</td><td>火鸡腿		</td><td>90/100</td></tr>
+					<tr><td>午餐肉			</td><td>229/100</td><td>羊肾		</td><td>90/100</td></tr>
+					<tr><td>小肚			</td><td>225/100</td><td>鸭胸脯肉	</td><td>90/100</td></tr>
+					<tr><td>羊舌			</td><td>225/100</td><td>羊肚		</td><td>87/100</td></tr>
+					<tr><td>羊肉串(炸)		</td><td>217/100</td><td>野兔肉		</td><td>84/100</td></tr>
+					<tr><td>羊肉(熟)		</td><td>215/100</td><td>猪肺		</td><td>84/97</td></tr>
+					<tr><td>扒鸡			</td><td>215/66	</td><td>牛肚		</td><td>72/100</td></tr>
+					<tr><td>火腿肠			</td><td>212/100</td><td>羊大肠		</td><td>70/100</td></tr>
+					<tr><td>卤煮鸡			</td><td>212/70	</td><td>猪小肠		</td><td>65/100</td></tr>
+					<tr><td>猪肝(卤煮)		</td><td>203/100</td><td>鸭血(白鸭)	</td><td>58/100</td></tr>
+					<tr><td>鸽				</td><td>201/42	</td><td>羊血		</td><td>57/100</td></tr>
+					<tr><td>猪肉(清蒸)		</td><td>198/100</td><td>猪血		</td><td>55/100</td></tr>
+					<tr><td>羊肉(肥,瘦)		</td><td>198/90	</td><td>鸡血		</td><td>49/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="dan" class="text-center">蛋类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>蛋黄粉</td>		<td>644/100</td><td>松花蛋(鸭)</td>			<td>171/ 90</td></tr>
+					<tr><td>鸡蛋粉</td>		<td>545/100</td><td>鹌鹑蛋</td>				<td>160/ 86</td></tr>
+					<tr><td>鸭蛋黄</td>		<td>378/100</td><td>鸡蛋(红皮)</td>			<td>156/ 88</td></tr>
+					<tr><td>鸡蛋黄</td>		<td>328/100</td><td>鹌鹑蛋(五香罐头)</td>	<td>152/ 89</td></tr>
+					<tr><td>鹅蛋黄</td>		<td>324/100</td><td>鸡蛋(白皮)</td>			<td>138/ 87</td></tr>
+					<tr><td>鹅蛋</td>		<td>196/ 87</td><td>鸡蛋白</td>				<td> 60/100</td></tr>
+					<tr><td>咸鸭蛋</td>		<td>190/ 88</td><td>鹅蛋白</td>				<td> 48/100</td></tr>
+					<tr><td>鸭蛋</td>		<td>180/ 87</td><td>鸭蛋白</td>				<td> 47/100</td></tr>
+					<tr><td>松花蛋(鸡)</td>	<td>178/ 83</td><td></td>					<td></td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="shuichan" class="text-center">水产类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>鲮鱼(罐头)		</td><td>399/100</td><td>金线鱼		</td><td>100/40</td></tr>
+					<tr><td>淡菜(干)		</td><td>355/100</td><td>狗母鱼		</td><td>100/67</td></tr>
+					<tr><td>蛏干			</td><td>340/100</td><td>鲈鱼		</td><td>100/58</td></tr>
+					<tr><td>鲍鱼(干)		</td><td>322/100</td><td>鳙鱼(胖头鱼)</td><td>100/61</td></tr>
+					<tr><td>鱿鱼(干)		</td><td>313/98	</td><td>小黄花鱼	</td><td>99/63</td></tr>
+					<tr><td>鱼片干			</td><td>303/100</td><td>红鳟鱼		</td><td>99/57</td></tr>
+					<tr><td>墨鱼(干)		</td><td>287/82	</td><td>罗非鱼		</td><td>98/55</td></tr>
+					<tr><td>干贝			</td><td>264/100</td><td>蛤蜊(毛蛤蜊)</td><td>97/25</td></tr>
+					<tr><td>海参			</td><td>262/93	</td><td>泥鳅		</td><td>96/60</td></tr>
+					<tr><td>鱼子酱(大麻哈)	</td><td>252/100</td><td>大黄鱼		</td><td>96/66</td></tr>
+					<tr><td>海鲫鱼			</td><td>206/60	</td><td>鲮鱼		</td><td>95/57</td></tr>
+					<tr><td>丁香鱼(干)		</td><td>196/100</td><td>海蟹		</td><td>95/55</td></tr>
+					<tr><td>海米			</td><td>195/100</td><td>梭子蟹		</td><td>95/49</td></tr>
+					<tr><td>堤鱼			</td><td>191/64	</td><td>螯虾		</td><td>93/31</td></tr>
+					<tr><td>河鳗			</td><td>181/84	</td><td>对虾		</td><td>93/61</td></tr>
+					<tr><td>腭针鱼			</td><td>180/75	</td><td>龙虾		</td><td>90/46</td></tr>
+					<tr><td>香海螺			</td><td>163/59	</td><td>黄鳝(鳝鱼)	</td><td>89/67</td></tr>
+					<tr><td>快鱼			</td><td>159/71	</td><td>沙丁鱼		</td><td>88/67</td></tr>
+					<tr><td>鲐鱼			</td><td>155/66	</td><td>明太鱼		</td><td>88/45</td></tr>
+					<tr><td>虾皮			</td><td>153/100</td><td>石斑鱼		</td><td>85/57</td></tr>
+					<tr><td>白姑鱼			</td><td>150/67	</td><td>明虾		</td><td>85/57</td></tr>
+					<tr><td>胡子鲇			</td><td>146/50	</td><td>河虾		</td><td>84/86</td></tr>
+					<tr><td>大麻哈鱼		</td><td>143/72	</td><td>乌贼		</td><td>84/97</td></tr>
+					<tr><td>平鱼			</td><td>142/70	</td><td>麦穗鱼		</td><td>84/63</td></tr>
+					<tr><td>尖嘴白			</td><td>137/80	</td><td>鲍鱼		</td><td>84/65</td></tr>
+					<tr><td>鳊鱼(武昌鱼)	</td><td>135/59	</td><td>面包鱼		</td><td>83/52</td></tr>
+					<tr><td>八爪鱼			</td><td>135/78	</td><td>墨鱼		</td><td>82/69</td></tr>
+					<tr><td>口头鱼			</td><td>134/56	</td><td>琵琶虾		</td><td>81/32</td></tr>
+					<tr><td>黄姑鱼			</td><td>133/63	</td><td>淡菜(鲜)	</td><td>80/49</td></tr>
+					<tr><td>带鱼			</td><td>127/76	</td><td>海虾		</td><td>79/51</td></tr>
+					<tr><td>黄鳍鱼			</td><td>124/52	</td><td>鲜贝		</td><td>77/100</td></tr>
+					<tr><td>鲚鱼(小凤尾鱼)	</td><td>124/90	</td><td>非洲黑鲫鱼	</td><td>77/53</td></tr>
+					<tr><td>边鱼			</td><td>124/70	</td><td>鱿鱼(水浸)	</td><td>75/98</td></tr>
+					<tr><td>沙梭鱼			</td><td>122/72	</td><td>海蛰头		</td><td>74/100</td></tr>
+					<tr><td>海鳗			</td><td>122/67	</td><td>牡蛎		</td><td>73/100</td></tr>
+					<tr><td>鲅鱼			</td><td>122/80	</td><td>蚶子		</td><td>71/27</td></tr>
+					<tr><td>银鱼			</td><td>119/100</td><td>海参(鲜)	</td><td>71/100</td></tr>
+					<tr><td>红螺			</td><td>119/55	</td><td>蚌肉		</td><td>71/63</td></tr>
+					<tr><td>桂鱼			</td><td>117/61	</td><td>海蛎肉		</td><td>66/100</td></tr>
+					<tr><td>青鱼			</td><td>116/63	</td><td>乌鱼蛋		</td><td>66/73</td></tr>
+					<tr><td>赤眼鳟(金目鱼)	</td><td>114/59	</td><td>蟹肉		</td><td>62/100</td></tr>
+					<tr><td>梅童鱼			</td><td>113/63	</td><td>鲜赤贝		</td><td>61/34</td></tr>
+					<tr><td>草鱼			</td><td>112/58	</td><td>黄鳝(鳝丝)	</td><td>61/88</td></tr>
+					<tr><td>鲨鱼			</td><td>110/56	</td><td>鲜扇贝		</td><td>60/35</td></tr>
+					<tr><td>鲤鱼			</td><td>109/54	</td><td>田螺		</td><td>60/26</td></tr>
+					<tr><td>鲫鱼			</td><td>108/54	</td><td>生蚝		</td><td>57/100</td></tr>
+					<tr><td>比目鱼			</td><td>107/72	</td><td>蛤蜊(沙蛤)	</td><td>56/50</td></tr>
+					<tr><td>鲷(加吉鱼)		</td><td>106/65	</td><td>章鱼		</td><td>52/100</td></tr>
+					<tr><td>鲚鱼(大凤尾鱼)	</td><td>106/79	</td><td>河蚬		</td><td>47/35</td></tr>
+					<tr><td>片口鱼			</td><td>105/68	</td><td>蛤蜊(花蛤)	</td><td>45/46</td></tr>
+					<tr><td>河蟹			</td><td>103/42	</td><td>蛏子		</td><td>40/57</td></tr>
+					<tr><td>鲇鱼			</td><td>102/65	</td><td>河蚌		</td><td>36/23</td></tr>
+					<tr><td>鲢鱼			</td><td>102/61	</td><td>海蛰皮		</td><td>33/100</td></tr>
+					<tr><td>基围虾			</td><td>101/60	</td><td>海参(水浸)	</td><td>24/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="nai" class="text-center">奶类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>黄油</td>				<td>892/100</td><td>炼乳(罐头,甜)</td>	<td>332/100</td></tr>
+					<tr><td>奶油</td>				<td>720/100</td><td>奶酪</td>			<td>328/100</td></tr>
+					<tr><td>黄油渣</td>				<td>599/100</td><td>奶豆腐(鲜)</td>		<td>305/100</td></tr>
+					<tr><td>牛奶粉(母乳化奶粉)</td>	<td>510/100</td><td>酸奶</td>			<td> 72/100</td></tr>
+					<tr><td>羊奶粉(全脂)</td>		<td>498/100</td><td>果料酸奶</td>		<td> 67/100</td></tr>
+					<tr><td>牛奶粉(强化维生素)</td>	<td>484/100</td><td>母乳</td>			<td> 65/100</td></tr>
+					<tr><td>牛奶粉(全脂)</td>		<td>478/100</td><td>酸奶(中脂)</td>		<td> 64/100</td></tr>
+					<tr><td>奶片</td>				<td>472/100</td><td>酸奶(高蛋白)</td>	<td> 62/100</td></tr>
+					<tr><td>牛奶粉(全脂速溶)</td>	<td>466/100</td><td>羊奶(鲜)</td>		<td> 59/100</td></tr>
+					<tr><td>奶皮子</td>				<td>460/100</td><td>脱脂酸奶</td>		<td> 57/100</td></tr>
+					<tr><td>牛奶粉(婴儿奶粉)</td>	<td>443/100</td><td>牛奶</td>			<td> 54/100</td></tr>
+					<tr><td>奶疙瘩</td>				<td>426/100</td><td>牛奶(强化VA,VD)</td><td> 51/100</td></tr>
+					<tr><td>冰淇淋粉</td>			<td>396/100</td><td>酸奶(橘味脱脂)</td>	<td> 48/100</td></tr>
+					<tr><td>奶豆腐(脱脂)</td>		<td>343/100</td><td>果味奶</td>			<td> 20/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="youzhi" class="text-center">油脂类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>棕榈油</td>		<td>900/100</td><td>猪油(炼)</td>	<td>897/100</td></tr>
+					<tr><td>菜籽油</td>		<td>899/100</td><td>鸭油(炼)</td>	<td>897/100</td></tr>
+					<tr><td>茶油</td>		<td>899/100</td><td>大麻油</td>		<td>897/100</td></tr>
+					<tr><td>豆油</td>		<td>899/100</td><td>羊油(炼)</td>	<td>895/100</td></tr>
+					<tr><td>花生油</td>		<td>899/100</td><td>玉米油</td>		<td>895/100</td></tr>
+					<tr><td>葵花籽油</td>	<td>899/100</td><td>牛油</td>		<td>835/100</td></tr>
+					<tr><td>棉籽油</td>		<td>899/100</td><td>猪油(未炼)</td>	<td>827/100</td></tr>
+					<tr><td>牛油(炼)</td>	<td>898/100</td><td>羊油</td>		<td>824/100</td></tr>
+					<tr><td>色拉油</td>		<td>898/100</td><td>辣椒油</td>		<td>450/100</td></tr>
+					<tr><td>香油</td>		<td>898/100</td><td>胡麻油</td>		<td>450/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="gaodian" class="text-center">糕点小吃类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>VC饼干			</td><td>572/100</td><td>面包(法式牛角)	</td><td>375/100</td></tr>
+					<tr><td>曲奇饼			</td><td>546/100</td><td>藕粉			</td><td>372/100</td></tr>
+					<tr><td>焦圈			</td><td>544/100</td><td>美味香酥卷		</td><td>368/100</td></tr>
+					<tr><td>维夫饼干		</td><td>528/100</td><td>蜜麻花			</td><td>367/100</td></tr>
+					<tr><td>麻花			</td><td>524/100</td><td>绿豆糕			</td><td>349/100</td></tr>
+					<tr><td>开口笑			</td><td>512/100</td><td>蛋糕			</td><td>347/100</td></tr>
+					<tr><td>凤尾酥			</td><td>511/100</td><td>桂花藕粉		</td><td>344/100</td></tr>
+					<tr><td>起酥			</td><td>499/100</td><td>蛋糕(蛋清)		</td><td>339/100</td></tr>
+					<tr><td>京式黄酥		</td><td>490/100</td><td>茯苓夹饼		</td><td>332/100</td></tr>
+					<tr><td>桃酥			</td><td>481/100</td><td>碗糕			</td><td>332/100</td></tr>
+					<tr><td>核桃薄脆		</td><td>480/100</td><td>面包(黄油)		</td><td>329/100</td></tr>
+					<tr><td>福来酥			</td><td>465/100</td><td>烧饼			</td><td>326/100</td></tr>
+					<tr><td>春卷			</td><td>463/100</td><td>面包(椰圈)		</td><td>320/100</td></tr>
+					<tr><td>硬皮糕点		</td><td>463/100</td><td>蛋糕(蒸)		</td><td>320/100</td></tr>
+					<tr><td>鹅油卷			</td><td>461/100</td><td>面包(多维)		</td><td>318/100</td></tr>
+					<tr><td>混糖糕点		</td><td>453/100</td><td>面包			</td><td>312/100</td></tr>
+					<tr><td>蛋麻脆			</td><td>452/100</td><td>栗羊羹			</td><td>301/100</td></tr>
+					<tr><td>开花豆			</td><td>446/100</td><td>面包(法式配餐)	</td><td>282/100</td></tr>
+					<tr><td>钙奶饼干		</td><td>444/100</td><td>炸糕			</td><td>280/100</td></tr>
+					<tr><td>月饼(奶油果馅)	</td><td>441/100</td><td>面包(维生素)	</td><td>279/100</td></tr>
+					<tr><td>江米条			</td><td>439/100</td><td>面包(果料)		</td><td>278/100</td></tr>
+					<tr><td>月饼(奶油松仁)	</td><td>438/100</td><td>面包(咸)		</td><td>274/100</td></tr>
+					<tr><td>鸡腿酥			</td><td>436/100</td><td>面包(麦胚)		</td><td>246/100</td></tr>
+					<tr><td>黑麻香酥		</td><td>436/100</td><td>三鲜豆皮		</td><td>240/100</td></tr>
+					<tr><td>京八件			</td><td>435/100</td><td>烧麦			</td><td>238/100</td></tr>
+					<tr><td>状元饼			</td><td>435/100</td><td>汤包			</td><td>238/100</td></tr>
+					<tr><td>奶油饼干		</td><td>429/100</td><td>驴打滚			</td><td>194/100</td></tr>
+					<tr><td>饼干(奶油)		</td><td>429/100</td><td>白水羊头		</td><td>193/100</td></tr>
+					<tr><td>月饼(百寿宴点)	</td><td>428/100</td><td>艾窝窝			</td><td>190/100</td></tr>
+					<tr><td>酥皮糕点		</td><td>426/100</td><td>爱窝窝			</td><td>190/100</td></tr>
+					<tr><td>月饼(枣泥)		</td><td>424/100</td><td>年糕			</td><td>154/100</td></tr>
+					<tr><td>黑洋酥			</td><td>417/100</td><td>灌肠			</td><td>134/100</td></tr>
+					<tr><td>月饼(五仁)		</td><td>416/100</td><td>豌豆黄			</td><td>133/100</td></tr>
+					<tr><td>苏打饼干		</td><td>408/100</td><td>炒肝			</td><td> 96/100</td></tr>
+					<tr><td>香油炒面		</td><td>407/100</td><td>油茶			</td><td> 94/100</td></tr>
+					<tr><td>月饼(豆沙)		</td><td>405/100</td><td>茶汤			</td><td> 92/100</td></tr>
+					<tr><td>麻香糕			</td><td>401/100</td><td>小豆粥			</td><td> 61/100</td></tr>
+					<tr><td>麻烘糕			</td><td>397/100</td><td>凉粉(带调料)	</td><td> 50/100</td></tr>
+					<tr><td>菠萝豆			</td><td>392/100</td><td>豆腐脑(带卤)	</td><td> 47/100</td></tr>
+					<tr><td>蛋黄酥			</td><td>386/100</td><td>凉粉			</td><td> 37/100</td></tr>
+					<tr><td>蛋糕(奶油)		</td><td>378/100</td><td>豆汁(生)		</td><td> 10/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="tang" class="text-center">糖类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>巧克力</td>			<td>586/100</td><td>绵白糖</td>			<td>396/100</td></tr>
+					<tr><td>巧克力(维夫)</td>	<td>572/100</td><td>红糖</td>			<td>389/100</td></tr>
+					<tr><td>芝麻南糖</td>		<td>538/100</td><td>米花糖</td>			<td>384/100</td></tr>
+					<tr><td>酥糖</td>			<td>436/100</td><td>泡泡糖</td>			<td>360/ 68</td></tr>
+					<tr><td>奶糖</td>			<td>407/100</td><td>淀粉(团粉)</td>		<td>346/100</td></tr>
+					<tr><td>巧克力(酒芯)</td>	<td>400/100</td><td>淀粉(玉米)</td>		<td>345/100</td></tr>
+					<tr><td>酸三色糖</td>		<td>397/100</td><td>淀粉(土豆粉)</td>	<td>337/100</td></tr>
+					<tr><td>冰糖</td>			<td>397/100</td><td>蜂蜜</td>			<td>321/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="yinliao" class="text-center">饮料类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>麦乳精</td>				<td>429/100</td><td>冰砖</td>				<td>153/100</td></tr>
+					<tr><td>酸梅精</td>				<td>394/100</td><td>冰淇淋</td>				<td>126/100</td></tr>
+					<tr><td>山楂精</td>				<td>386/100</td><td>橘子汁</td>				<td>119/100</td></tr>
+					<tr><td>二锅头(58度)</td>		<td>352/100</td><td>红葡萄酒(16度)</td>		<td> 91/100</td></tr>
+					<tr><td>可可粉</td>				<td>320/100</td><td>红葡萄酒(12度)</td>		<td> 68/100</td></tr>
+					<tr><td>甲级龙井</td>			<td>309/100</td><td>白葡萄酒(11度)</td>		<td> 62/100</td></tr>
+					<tr><td>铁观音</td>				<td>304/100</td><td>喜乐</td>				<td> 53/100</td></tr>
+					<tr><td>绿茶</td>				<td>296/100</td><td>冰棍</td>				<td> 47/100</td></tr>
+					<tr><td>红茶</td>				<td>294/100</td><td>杏仁露</td>				<td> 46/100</td></tr>
+					<tr><td>花茶</td>				<td>281/100</td><td>汽水(特制)</td>			<td> 42/100</td></tr>
+					<tr><td>橘汁(浓缩蜜橘)</td>		<td>235/100</td><td>巧克力豆奶</td>			<td> 39/100</td></tr>
+					<tr><td>紫雪糕</td>				<td>228/100</td><td>柠檬汽水</td>			<td> 38/100</td></tr>
+					<tr><td>砖茶</td>				<td>206/100</td><td>北京6度特制啤酒</td>	<td> 35/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="junzao" class="text-center">菌藻类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>石花菜</td>		<td>314/100</td><td>榛蘑</td>			<td>157/ 77</td></tr>
+					<tr><td>琼脂</td>		<td>311/100</td><td>苔菜</td>			<td>148/100</td></tr>
+					<tr><td>发菜</td>		<td>246/100</td><td>松蘑</td>			<td>112/100</td></tr>
+					<tr><td>口蘑</td>		<td>242/100</td><td>海带(干)</td>		<td> 77/ 98</td></tr>
+					<tr><td>普中红蘑</td>	<td>214/100</td><td>金针菇</td>			<td> 26/100</td></tr>
+					<tr><td>珍珠白蘑</td>	<td>212/100</td><td>草菇</td>			<td> 23/100</td></tr>
+					<tr><td>冬菇</td>		<td>212/ 86</td><td>双孢蘑菇</td>		<td> 22/ 97</td></tr>
+					<tr><td>香菇(干)</td>	<td>211/ 95</td><td>水发木耳</td>		<td> 21/100</td></tr>
+					<tr><td>杏丁蘑</td>		<td>207/100</td><td>金针菇(罐装)</td>	<td> 21/100</td></tr>
+					<tr><td>紫菜</td>		<td>207/100</td><td>平菇</td>			<td> 20/ 93</td></tr>
+					<tr><td>黑木耳</td>		<td>205/100</td><td>鲜蘑</td>			<td> 20/ 99</td></tr>
+					<tr><td>大红菇</td>		<td>200/100</td><td>香菇(鲜)</td>		<td> 19/100</td></tr>
+					<tr><td>白木耳</td>		<td>200/ 96</td><td>海带(鲜)</td>		<td> 17/100</td></tr>
+					<tr><td>黄蘑</td>		<td>166/ 89</td><td>猴头菇(罐装)</td>	<td> 13/100</td></tr>
+		<!--===========================================================================================================-->
+					<tr><th colspan="4"><h4 id="qita" class="text-center">其他类</h4></th></tr>
+					<tr class="info"><td>食材名称</td><td>热量(大卡)/可食部分(克)</td><td>食材名称</td><td>热量(大卡)/可食部分(克)</td></tr>
+					<tr><td>芝麻酱</td>			<td>618/100</td><td>八宝菜(酱)</td>		<td>72/100</td></tr>
+					<tr><td>花生酱</td>			<td>594/100</td><td>酱油</td>			<td>71/100</td></tr>
+					<tr><td>芥末</td>			<td>476/100</td><td>萝卜干</td>			<td>60/100</td></tr>
+					<tr><td>胡椒粉</td>			<td>357/100</td><td>豆瓣辣酱</td>		<td>59/100</td></tr>
+					<tr><td>味精</td>			<td>268/100</td><td>大头菜(桂花)</td>	<td>51/100</td></tr>
+					<tr><td>豆鼓(五香)</td>		<td>244/100</td><td>冬菜</td>			<td>46/100</td></tr>
+					<tr><td>辣油豆瓣酱</td>		<td>184/100</td><td>酱苤蓝丝</td>		<td>39/100</td></tr>
+					<tr><td>豆瓣酱</td>			<td>178/100</td><td>芥菜头</td>			<td>38/100</td></tr>
+					<tr><td>甜面酱</td>			<td>136/100</td><td>辣萝卜条</td>		<td>37/100</td></tr>
+					<tr><td>辣酱(麻)</td>		<td>135/100</td><td>大头菜(酱)</td>		<td>36/100</td></tr>
+					<tr><td>黄酱</td>			<td>131/100</td><td>辣椒糊</td>			<td>31/100</td></tr>
+					<tr><td>醋</td>				<td>130/100</td><td>酱萝卜</td>			<td>30/100</td></tr>
+					<tr><td>牛肉辣瓣酱</td>		<td>127/100</td><td>榨菜</td>			<td>29/100</td></tr>
+					<tr><td>糖蒜</td>			<td>114/ 74</td><td>腌雪里红</td>		<td>25/100</td></tr>
+					<tr><td>甜辣黄瓜</td>		<td> 99/100</td><td>酱黄瓜</td>			<td>24/100</td></tr>
+					<tr><td>郫县辣酱</td>		<td> 89/100</td><td>韭菜花(腌)</td>		<td>15/100</td></tr>
+					<tr><td>合锦菜</td>			<td> 75/100</td><td></td>				<td></td></tr>
+		<!--===========================================================================================================-->
+				</table>
+			</div><!--end of wrapper -->
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	
+</script>

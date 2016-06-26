@@ -1,0 +1,231 @@
+/**
+ * style.less
+ * @author:Seasand.
+ * @date:2016-05.
+ */
+/*=====================================================================================================*/
+/*Color*/
+/* General Style -- Border*/
+/*=====================================================================================================*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+  background: #F5F5D5;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+header {
+  background: #0096E5;
+}
+#container {
+  min-height: 520px;
+  padding-top: 80px;
+  /*index*/
+  /*register&login*/
+  /*reset_pass*/
+  /*cookbook&food&user*/
+  /*show_cookbook*/
+}
+#container #row0 {
+  display: flex;
+  align-items: center;
+}
+#container #row0 img {
+  flex: 1;
+}
+#container #row1 {
+  margin: 20px 0;
+}
+#container #row1 div {
+  padding: 30px;
+  text-align: center;
+  color: #777;
+}
+#container #row1 div img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #0096E5;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -o-border-radius: 100px;
+  -ms-border-radius: 100px;
+}
+#container #row2 {
+  margin: 20px 0;
+  background: #fff;
+}
+#container #row2 div {
+  min-height: 420px;
+  padding: 30px;
+  text-align: center;
+  color: #777;
+  border-right: 1px solid #ccc;
+}
+#container #row2 div:last-child {
+  border: none;
+}
+#container #row2 div p {
+  text-align: left;
+}
+#container #row3 {
+  margin: 20px 0;
+  background: #fff;
+}
+#container #row3 div {
+  min-height: 360px;
+  padding: 30px;
+  text-align: center;
+  color: #777;
+  border-right: 1px solid #ccc;
+}
+#container #row3 div:last-child {
+  border: none;
+}
+#container #row3 div p {
+  text-align: left;
+}
+#container #row4 {
+  margin: 20px 0;
+  padding: 30px;
+  background: #0096E5;
+  color: #fff;
+  text-align: center;
+  min-height: 500px;
+}
+#container #row4 div div {
+  margin-top: 20px;
+}
+#container #row4 div div img {
+  background: transparent;
+  border: none;
+}
+#container #row5 {
+  padding: 0;
+  margin-top: 10px;
+}
+#container .topform {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  color: #777;
+  background: #fff;
+}
+#container .topform input[type="submit"] {
+  padding: 10px 50px;
+}
+#container #wrapper {
+  min-height: 500px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+#container #wrapper aside {
+  padding: 0;
+  text-align: center;
+}
+#container #wrapper aside img {
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+}
+#container #wrapper aside ul {
+  margin-top: 30px;
+}
+#container #wrapper aside ul li {
+  padding: 10px 100px;
+}
+#container #wrapper aside ul li:hover {
+  cursor: pointer;
+  color: #fff;
+  background: #0096E5;
+}
+#container #wrapper main {
+  padding: 20px;
+  border-left: 1px solid #ccc;
+}
+#container #wrapper main section .wrapper {
+  min-height: 400px;
+  /*user part*/
+  /*food part*/
+  /*cookbook part*/
+}
+#container #wrapper main section .wrapper div {
+  /*food part*/
+}
+#container #wrapper main section .wrapper div #cropbox {
+  width: 400px;
+  height: 300px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+}
+#container #wrapper main section .wrapper div #preview {
+  width: 150px;
+  height: 150px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+}
+#container #wrapper main section .wrapper div #btn_upload,
+#container #wrapper main section .wrapper div #btn_preview,
+#container #wrapper main section .wrapper div #btn_savePhoto {
+  margin-top: 20px;
+}
+#container #wrapper main section .wrapper div .message {
+  color: green;
+  padding: 10px;
+}
+#container #wrapper main section .wrapper div p span:not(.span_title) {
+  cursor: pointer;
+}
+#container #wrapper main section .wrapper div p span:not(.span_title):hover {
+  background: #0096E5;
+}
+#container #wrapper main section .wrapper #energyDiagram {
+  border: 1px solid #0096E5;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+#container #wrapper main section .wrapper #energyDiagram div {
+  border: 1px solid #ccc;
+  background: #0096E5;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  min-height: 20px;
+  width: 10%;
+}
+#container #wrapper main section .wrapper #cookbookList article {
+  min-height: 120px;
+}
+#container article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  color: #fff;
+  background: #000;
+  text-align: center;
+}

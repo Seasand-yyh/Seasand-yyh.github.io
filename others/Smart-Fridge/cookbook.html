@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="智能冰箱管理系统" > 
+		<meta name="keywords" content="智能冰箱管理系统">
+
+		<title>食谱管理</title>
+		<link href="favicon.ico" rel="icon" type="image/x-icon" />  
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/jquery.Jcrop.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header class="container-fluid">    
+		    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <img src="images/logo.png">
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li><a href="#">主页</a></li>
+		                    <li><a href="food.html">食材管理</a></li>
+		                    <li><a href="cookbook.html">食谱管理</a></li>
+		                    <li><a href="user.html">个人中心</a></li>
+		                    <li><a href="/logout"><strong>注销</strong></a></li>
+		                    <li><a href="register.html"><strong>注册</strong></a></li>
+		                    <li><a href="login.html"><strong>登录</strong></a></li>
+		                </ul>		               
+		            </div><!--/.nav-collapse -->
+		        </div><!--/.container -->
+		    </nav>
+		</header>
+		<div id="container" class="container-fluid">
+			<div id="wrapper" class="container">
+				<aside class="col-md-3">
+					<h2 class="text-center">食谱管理</h2>
+					<img class="text-center" src="images/photo_default.jpg">
+					<ul class="list-group text-center">
+						<li class="list-group-item sectionBtn" id="btn_section01">推荐食谱</li>
+						<li class="list-group-item sectionBtn" id="btn_section03">添加食谱</li>
+					</ul>
+				</aside>
+				<main class="col-md-9">
+					<section id="section01">
+						<h3>推荐食谱</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="search_cookbook_form" method="post" action="/searchCookbook">
+								<div class="form-group">
+									<div class="col-md-8">
+										<input class="form-control" type="search" name="cookbook_keyword" id="cookbook_keyword" placeholder="食谱名称/主要食材" />
+									</div>	
+									<div class="col-md-4">
+										<input class="btn btn-info" type="button" id="btn_searchCookbook" value="搜索" />
+									</div>		
+								</div>	
+							</form>
+							<div id="search_condition">
+								<p id="ctype_condition">
+									<span class="span_title">食谱类型</span>
+									<span class="label label-default">我的食谱</span>
+									<span class="label label-default">粤菜</span>
+									<span class="label label-default">川菜</span>
+									<span class="label label-default">鲁菜</span>
+									<span class="label label-default">湘菜</span>
+									<span class="label label-default">闽菜</span>
+									<span class="label label-default">浙菜</span>
+									<span class="label label-default">徽菜</span>
+									<span class="label label-default">淮扬菜</span>
+									<span class="label label-default">其他</span>
+								</p>
+							</div>
+							<hr/>
+							<div id="cookbookList">
+								<article>
+									<div class="col-md-4">
+										<img class="img-thumbnail" src="test/scroll01.jpg" />
+									</div>
+									<div class="col-md-8">
+										<h4>水煮鱼</h4>
+										<h5>推荐度:4</h5>
+								        <h5>食谱简介:鲜香可口！鲜香可口！鲜香可口！鲜香可口！</h5>
+									    <h5><a href="show_cookbook.html">查看详细</a></h5>
+									</div>
+								</article>
+								<article>
+									<div class="col-md-4">
+										<img class="img-thumbnail" src="test/scroll02.jpg" />
+									</div>
+									<div class="col-md-8">
+										<h4>宫保鸡丁</h4>
+										<h5>推荐度:4</h5>
+								        <h5>食谱简介:鲜香可口！鲜香可口！鲜香可口！鲜香可口！</h5>
+									    <h5><a href="show_cookbook.html">查看详细</a></h5>
+									</div>
+								</article>
+								<article>
+									<div class="col-md-4">
+										<img class="img-thumbnail" src="test/scroll03.jpg" />
+									</div>
+									<div class="col-md-8">
+										<h4>麻辣豆腐</h4>
+										<h5>推荐度:4</h5>
+								        <h5>食谱简介:鲜香可口！鲜香可口！鲜香可口！鲜香可口！</h5>
+									    <h5><a href="show_cookbook.html">查看详细</a></h5>
+									</div>
+								</article>
+								<article>
+									<div class="col-md-4">
+										<img class="img-thumbnail" src="test/scroll04.jpg" />
+									</div>
+									<div class="col-md-8">
+										<h4>白切鸡</h4>
+										<h5>推荐度:4</h5>
+								        <h5>食谱简介:鲜香可口！鲜香可口！鲜香可口！鲜香可口！</h5>
+									    <h5><a href="show_cookbook.html">查看详细</a></h5>
+									</div>
+								</article>
+							</div>
+						</div>
+					</section><!--end of section 01-->
+					<section id="section03">
+						<h3>添加食谱</h3>
+						<hr/>
+						<div class="wrapper">
+							<form class="form-horizontal" id="add_cookbook_form" method="post" action="/addCookbook" enctype="multipart/form-data">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食谱类型</label>
+									<div class="col-sm-8">
+										<select name="cookbook_type" class="form-control">
+											<option value="粤菜">粤菜</option>
+											<option value="川菜">川菜</option>
+											<option value="鲁菜">鲁菜</option>
+											<option value="湘菜">湘菜</option>
+											<option value="闽菜">闽菜</option>
+											<option value="浙菜">浙菜</option>
+											<option value="徽菜">徽菜</option>
+											<option value="淮扬菜">淮扬菜</option>
+											<option value="其他">其他</option>
+										</select>		
+									</div>		
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食谱名称</label>
+									<div class="col-sm-8" id="cookbook_name">
+										<input class="form-control" type="text" name="cookbook_name" />
+										<span>请输入食谱名称！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食谱描述</label>
+									<div class="col-sm-8" id="cookbook_desc">
+										<input class="form-control" type="text" name="cookbook_desc" />
+										<span>请输入食谱描述！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">所需食材</label>
+									<div class="col-sm-8" id="foods">
+										<input class="form-control" type="text" name="foods" />
+										<span>请输入所需食材（用逗号分隔）！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食谱热量</label>
+									<div class="col-sm-8" id="energy">
+										<input class="form-control" type="text" name="energy" />
+										<span>请输入食谱热量（单位:卡）！</span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">食谱图片</label>
+									<div class="col-sm-8" id="picture">
+										<input class="form-control" type="file" name="picture" />
+										<span></span>
+									</div>					
+								</div>
+								<div class="form-group">
+									<label class="control-label">制作方法</label>
+									<textarea name="method" class="form-control" rows="8"></textarea>				
+								</div>
+								<div class="form-group">
+									<input class="btn btn-info col-sm-offset-2" type="submit" value="保存" />
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 tips">
+										
+									</div>
+								</div>			
+							</form>
+						</div>
+					</section><!--end of section 03-->
+				</main>
+			</div><!--end of wrapper -->
+		</div><!--end of container -->
+		<footer class="container-fluid">
+			<div class="container">
+				<small>
+					Copyright &copy; 2016<br/>
+					智能冰箱管理系统 软件开发小组<br/>
+					All rights reserved
+				</small>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
+<!-- ============================================================================================ -->
+<script src="js/jquery-2.2.3.min.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+
+		//页面初始化加载时隐藏除第一个section之外的其他section.
+		$("#container #wrapper section").first().show().nextAll().hide();
+
+		//点击侧栏导航显示对应的选项卡页面.
+		$(".sectionBtn").click(function(){
+			var IDstr = $(this).attr("id");
+			IDstr = IDstr.substring(IDstr.indexOf("_")+1);
+			$("#"+IDstr,"#container #wrapper").show().siblings().hide();
+		});
+
+		//设置提示样式.
+		$(".wrapper .tips").css({color:"#0f0"});
+
+		//校验食谱输入表单.
+		$("#add_cookbook_form").submit(function(){
+			var can_submit=true;
+			var message;
+			var cookbook_name = $.trim($("#cookbook_name input").val());
+			var foods = $.trim($("#foods input").val());
+			var method = $.trim($("#add_cookbook_form textarea").val());
+			var cookbook_desc = $.trim($("#cookbook_desc input").val());
+			var energy = $.trim($("#energy input").val());
+			var picture = $.trim($("#picture input").val());
+			
+			if(cookbook_name===""){
+				message="食谱名称不能为空！";
+				$("#cookbook_name span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(foods===""){
+				message="食材不能为空！";
+				$("#foods span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(cookbook_desc===""){
+				message="食谱描述不能为空！";
+				$("#cookbook_desc span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(energy===""){
+				message="食谱能量不能为空！";
+				$("#energy span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(picture===""){
+				message="食谱图片不能为空！";
+				$("#picture span").css({color:"#f00"}).text(message);
+				can_submit = false;
+			}
+			if(method===""){
+				can_submit = false;
+			}
+
+			if(can_submit === false){
+				return false;
+			}
+		});
+
+		//页面加载显示食谱列表.
+		/*$.get("/listAllCookbook",function(data){
+			var str=$("#cookbookList").html();
+			str+='<article><br/><br/><h4>猜你喜欢</h4></article>';
+			generateCookbookList(data,str);
+		});
+
+		//点击搜索按钮搜索食谱.
+		$("#btn_searchCookbook").click(function(){
+			$.post("/searchCookbook",{
+				"cookbook_keyword":$.trim($("#cookbook_keyword").val())
+			},function(data){
+				var str="";
+				generateCookbookList(data,str);
+			});
+		});
+
+		//点击标签填写搜索条件.
+		$("#ctype_condition .label-default").click(function(){
+			$("#cookbook_keyword").val($(this).text());
+			$.post("/searchCookbook",{
+				"cookbook_keyword":$.trim($(this).text())
+			},function(data){
+				var str="";
+				generateCookbookList(data,str);
+			});
+		});
+
+		function generateCookbookList(data,str){
+			if(data && data.list){
+				var cookbooks=data.list;
+				for(var i=0;i<cookbooks.length;i++){
+					str+='<article>'
+						+'	<div class="col-md-4"><img class="img-thumbnail" src="'+cookbooks[i].picture+'" /></div>'
+						+'	<div class="col-md-8">'
+						+'		<h4>'+cookbooks[i].cname+'</h4>'
+						+'		<h5>推荐度:'+cookbooks[i].score+'</h5>'
+						+'      <h5>食谱简介:'+cookbooks[i].cdesc+'</h5>'
+						+'	    <h5><a href="/show_cookbook/'+cookbooks[i]._id+'">查看详细</a></h5>'
+						+'	</div>'
+						+'</article>';
+				}
+				$("#cookbookList").html(str);
+			}
+		}*/
+		
+
+
+	});
+</script>
